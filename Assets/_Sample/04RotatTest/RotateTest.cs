@@ -76,5 +76,5 @@ Quaternion(쿼터니언) 값 = Quaternion.Euler(Euler x, Euler y, Euler z)
 
 [2] Quaternion(쿼터니언) 값에서 Euler(오일러)값 구하기
 4자리에서 3자리값 구하기
-var angles = Quaternion(transform.rotation).eulerAngles;
+Vector3 angles = Quaternion(transform.rotation).eulerAngles;
 */
