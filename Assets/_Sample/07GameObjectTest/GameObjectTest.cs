@@ -27,38 +27,38 @@ namespace Sample
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            //(1) 게임오브젝트에 스크립트 소스를 컴포넌트롤 추가하여 직접(this.) 가져온다
-            //this.transform
-            //this.gameObject
+            /*//(1) 게임오브젝트에 스크립트 소스를 컴포넌트롤 추가하여 직접(this.) 가져온다
+            this.transform
+            this.gameObject
             //this.gameObject.transform
             //this.transform.gameObject
 
             //(2)
-            //publicTransform
-            //publicObject
+            publicTransform
+            publicObject
 
             //(3) FindGameObjectsWithTag(), FindGameObjectWithTag() 반환값으로
             // 게임오브젝트의 객체를 가져온다
-            //tagObejcts = GameObject.FindGameObjectsWithTag("tagString");
-            //tagObject = GameObject.FindGameObjectWithTag("tagString");
+            tagObejcts = GameObject.FindGameObjectsWithTag("tagString");
+            tagObject = GameObject.FindGameObjectWithTag("tagString");
 
             //(4) Instantiate(프리팹오브젝트, 생성위치, 생성회전값) 의 반환값으로
             // 게임오브젝트의 객체를 가져온다
-            //GameObject prefabGo = Instantiate(gameobjectPrefab, this.transform.position, Quaternion.identity);
+            GameObject prefabGo = Instantiate(gameobjectPrefab, this.transform.position, Quaternion.identity);
 
             //(5) parentObject.childCount, parentObject.GetChild 반환값으로 
             // 자식 게임오브젝트들의 객체를 가져온다
-            //childObjects = new Transform[parentObject.childCount];
-            //for (int i = 0; i < childObjects.Length; i++)
-            //{
-            //    childObjects[i] = parentObject.GetChild(i);
-            //}
+            childObjects = new Transform[parentObject.childCount];
+            for (int i = 0; i < childObjects.Length; i++)
+            {
+                childObjects[i] = parentObject.GetChild(i);
+            }
 
             //(6) 싱글톤 패턴 디자인 : 클래스이름.객체이름 으로 접근하여 사용
-            //SingletonTest.Instance
-            //SingletonTest.Instance.number = 10;
-            //singletonTest = SingletonTest.Instance;
-            //singletonTest.number = 10;
+            SingletonTest.Instance
+            SingletonTest.Instance.number = 10;
+            singletonTest = SingletonTest.Instance;
+            singletonTest.number = 10;*/
         }
 
         // Update is called once per frame
