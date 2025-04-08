@@ -1729,8 +1729,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16da5ae15517134468505aaf90a85408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  machineGunPrefab: {fileID: 6693756596688420092, guid: b0368115bfd0dc745832358a7c81e442, type: 3}
-  rocketTowerPrefab: {fileID: 8923714774130928737, guid: 87824a2bcb4992d40b6f1306e762e24f, type: 3}
 --- !u!4 &952292000
 Transform:
   m_ObjectHideFlags: 0
@@ -2867,6 +2865,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fff0c3012185cf4da1409c1e8fe6a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  machineGunTower:
+    towerPrefab: {fileID: 6693756596688420092, guid: b0368115bfd0dc745832358a7c81e442, type: 3}
+    cost: 100
+  rocketTower:
+    towerPrefab: {fileID: 8923714774130928737, guid: 87824a2bcb4992d40b6f1306e762e24f, type: 3}
+    cost: 250
 --- !u!1 &1440326439
 GameObject:
   m_ObjectHideFlags: 0
