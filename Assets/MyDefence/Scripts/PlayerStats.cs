@@ -27,6 +27,7 @@ namespace MyDefence
             //초기화
             //초기 소지금 지급 400
             money = startMoney;
+            Debug.Log("초기 소지금 400 Gold 지급");
         }
 
         //벌기, 쓰기, 소지금 확인 함수 만들기
