@@ -28,7 +28,21 @@ namespace MyDefence
         #region Field
         //타일에 설치할 타워 정보를 저장하는 변수
         private TowerBluePrint towerToBuild;
-        
+
+        #endregion
+
+        #region Property
+        //타워 건설 비용을 체크: 부족하면 true
+        public bool NotEnoughMoney
+        {
+            get { return PlayerStats.Money < towerToBuild.cost; }
+        }
+
+        //건설할 타워가 있는지 체크, 건설할 타워를 선택하지 않았을때
+        public bool CannotBuild
+        {
+            get { return towerToBuild == null; }
+        }
         #endregion
 
         private void Start()
