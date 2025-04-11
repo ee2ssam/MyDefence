@@ -8,6 +8,7 @@ namespace MyDefence
         //타워(건설) 정보를 가지고 있는 객체
         public TowerBluePrint machineGunTower;
         public TowerBluePrint rocketTower;
+        public TowerBluePrint laserTower;
         #endregion
 
 
@@ -21,8 +22,13 @@ namespace MyDefence
         //RocketTowerButton 클릭시 호출되는 함수
         public void RocketTowerButton()
         {
-            Debug.Log("towerToBuild에 rocketTower을 저장한다");
             BuildManager.Instance.SetTowerToBuild(rocketTower);
+        }
+
+        //LaserTowerButton 클릭시 호출되는 함수
+        public void LaserTowerButton()
+        {
+            BuildManager.Instance.SetTowerToBuild(laserTower);
         }
     }
 }
