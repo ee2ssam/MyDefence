@@ -31,6 +31,9 @@ namespace MyDefence
         {
             get { return lives; }
         }
+
+        //Round 카운트
+        public static int Rounds { get; set; }
         #endregion
 
         private void Start()
@@ -39,6 +42,7 @@ namespace MyDefence
             //초기 소지금 지급 400, 초기 생명 10 지급
             money = startMoney;
             lives = startLives;
+            Rounds = 0;
         }
 
         //벌기, 쓰기, 소지금 확인 함수 만들기
@@ -79,9 +83,6 @@ namespace MyDefence
             if(lives <= 0)
             {
                 lives = 0;
-
-                //게임오버
-                Debug.Log("Game Over!!!!");
             }
         }
 

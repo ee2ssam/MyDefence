@@ -54,6 +54,9 @@ namespace MyDefence
         IEnumerator SpawnWave()
         {
             waveCount++;
+
+            //라운드 카운트
+            PlayerStats.Rounds++;
             
             for (int i = 0; i < waveCount; i++)
             {

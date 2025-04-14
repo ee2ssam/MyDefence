@@ -5096,6 +5096,8 @@ MonoBehaviour:
   lineRenderer: {fileID: 5915220402148281046}
   impactEffect: {fileID: 777094551643212209}
   impactLight: {fileID: 1789308934417539696}
+  laserDamage: 30
+  slowRate: 0.4
 --- !u!1 &5070115924595564557
 GameObject:
   m_ObjectHideFlags: 0
