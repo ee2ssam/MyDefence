@@ -34,6 +34,8 @@ namespace MyDefence
 
         //타워 건설 이펙트 프리팹
         public GameObject buildEffectPrefab;
+        //타워 판매 이펙트 프리팹
+        public GameObject sellEffectPrefab;
         #endregion
 
         #region Property
@@ -133,6 +135,25 @@ namespace MyDefence
 
             //초기화 - 저장된 타워 정보를 초기화
             buildManager.SetTowerToBuild(null);
+        }
+
+        //타워 판매
+        public void SellTower()
+        {
+            int sellMoney = bluePrint.SellCost;
+            
+            //타워 제거(킬)
+            Destroy(tower);
+            //타워 정보(프리팹, 가격정보) 삭제
+            bluePrint = null;
+
+            //VFX, SFX
+            //판매 이펙트 생성한 후 2초후에 킬
+            GameObject effectGo = Instantiate(sellEffectPrefab, this.transform.position, Quaternion.identity);
+            Destroy(effectGo, 2f);
+
+            //판매 대금 회수
+            PlayerStats.AddMoney(sellMoney);
         }
 
         private void OnMouseEnter()

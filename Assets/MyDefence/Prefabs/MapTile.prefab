@@ -123,4 +123,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 98d9bd25262c54d4ca1a41c9a28cfeb4, type: 2}
   moneyMaterial: {fileID: 2100000, guid: 44f9531c55edb1b4caefb163901defab, type: 2}
+  bluePrint:
+    towerPrefab: {fileID: 0}
+    cost: 0
+    upgradePrefab: {fileID: 0}
+    upgradeCost: 0
   buildEffectPrefab: {fileID: 8175089137789173621, guid: 2b3299eea17014f46a9d9a437d6e2bdb, type: 3}
+  sellEffectPrefab: {fileID: 8175089137789173621, guid: e00c1b578d4e76041aa09f09a41b7170, type: 3}

@@ -15,6 +15,9 @@ namespace MyDefence
         //업그레이드 cost Text UI
         public TextMeshProUGUI upgradeCost;
         public Button upgradeButton;
+
+        //판매 cost Txet UI
+        public TextMeshProUGUI sellCost;
         #endregion
 
         //타일 UI 보이기
@@ -34,7 +37,10 @@ namespace MyDefence
                 //업그레이드 가격 표시
                 upgradeCost.text = tile.bluePrint.upgradeCost.ToString() + "G";
                 upgradeButton.interactable = true;
-            }   
+            }
+
+            //판매 가격 표시
+            sellCost.text = tile.bluePrint.SellCost.ToString() + "G";
 
             offset.SetActive(true);
         }
@@ -54,5 +60,17 @@ namespace MyDefence
             //선택된 타일을 해제한다
             BuildManager.Instance.DeselectTile();
         }
+
+        //셀 버튼 클릭시 호출
+        public void SellTower()
+        {
+            //선택된 타일에 있는 타워를 판매한다
+            selectTile.SellTower();
+
+            //선택된 타일을 해제한다
+            BuildManager.Instance.DeselectTile();
+        }
+
+
     }
 }
