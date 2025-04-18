@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace MyDefence
 {
@@ -28,6 +29,9 @@ namespace MyDefence
 
         //죽음 이펙트 프리팹
         public GameObject deathEffectPrefab;
+
+        //Health Bar UI
+        public Image healthBarImage;
         #endregion
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -83,10 +87,15 @@ namespace MyDefence
             health -= damage;
             Debug.Log($"Now Health: {health}");
 
+            //health bar 적용
+            //health : 0->100(startHealth), fillamunt 0->1 (100%, 소수점, 분수)
+            //백분율: (현재값량: health) / (총값량:100) startHealth
+            healthBarImage.fillAmount = health / startHealth;
+
             //데미지 효과(VFX, SFX)
 
             //죽음 체크
-            if(health <= 0f)
+            if (health <= 0f)
             {
                 Die();
             }

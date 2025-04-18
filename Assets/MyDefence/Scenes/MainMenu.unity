@@ -11027,6 +11027,7 @@ GameObject:
   - component: {fileID: 3530315206972261300}
   - component: {fileID: 8244384121099366345}
   - component: {fileID: 6064475416207977462}
+  - component: {fileID: 8244384121099366346}
   m_Layer: 10
   m_Name: EneryPylon_PFX
   m_TagString: Untagged
@@ -20629,6 +20630,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9176286253625406390}
+  - component: {fileID: 9176286253625406391}
   m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
@@ -20645,6 +20647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7666956977817462378}
+  - component: {fileID: 7666956977817462379}
   m_Layer: 10
   m_Name: PartToRotate
   m_TagString: Untagged
@@ -40364,7 +40367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890092847748933708}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.32391736, z: 0, w: 0.94608533}
+  m_LocalRotation: {x: 0, y: 0.7922897, z: 0, w: 0.61014515}
   m_LocalPosition: {x: 0, y: 0.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40372,7 +40375,20 @@ Transform:
   - {fileID: 509165451892541541}
   - {fileID: 9176286253625406390}
   m_Father: {fileID: 5032418483033754933}
-  m_LocalEulerAnglesHint: {x: 0, y: 37.8, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 104.8, z: 0}
+--- !u!114 &7666956977817462379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890092847748933708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e522ea667ae261745bec2d2f65d2b671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: {x: 0, y: 0.25, z: 0}
 --- !u!199 &7857231139811821705
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -45182,7 +45198,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -59106,6 +59122,20 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &8244384121099366346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661461993930238605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb4b9e59fc816544b827ea6fb466ce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystemToPlay: {fileID: 8244384121099366345}
+  interval: 5
 --- !u!1 &8296721252777470647
 GameObject:
   m_ObjectHideFlags: 0
@@ -59358,6 +59388,20 @@ Transform:
   - {fileID: 5285225281843057660}
   m_Father: {fileID: 7666956977817462378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9176286253625406391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687340476316093719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb4b9e59fc816544b827ea6fb466ce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystemToPlay: {fileID: 7990599795129712484}
+  interval: 6
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
