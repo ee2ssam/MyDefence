@@ -105,7 +105,7 @@ namespace MyDefence
             //초기화 - 저장된 타워 정보를 초기화
             buildManager.SetTowerToBuild(null);
 
-            Debug.Log($"건설하고 남은돈: {PlayerStats.Money}");
+            //Debug.Log($"건설하고 남은돈: {PlayerStats.Money}");
         }
 
         //타워 업그레이드

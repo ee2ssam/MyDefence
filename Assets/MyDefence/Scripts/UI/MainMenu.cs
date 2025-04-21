@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace MyDefence
 {
@@ -7,6 +6,7 @@ namespace MyDefence
     public class MainMenu : MonoBehaviour
     {
         #region Field
+        public SceneFader fader;
         [SerializeField]
         private string loadToScene = "PlayScene";
         #endregion
@@ -15,7 +15,7 @@ namespace MyDefence
         public void Play()
         {
             Debug.Log("Goto Play Scene");
-            SceneManager.LoadScene(loadToScene);
+            fader.FadeTo(loadToScene);
         }
 
         //게임 종료버튼 클리하면 호출되는 함수(어플리케이션 종료)

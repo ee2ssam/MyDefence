@@ -1,7 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace MyDefence
 {
@@ -9,12 +7,14 @@ namespace MyDefence
     public class Title : MonoBehaviour
     {
         #region Field
-        //애니키 UI 오브젝트
-        public GameObject anyKey;
-
+        public SceneFader fader;
         //다음 이동하는 씬 이름
         [SerializeField]
         private string loadToScene = "MainMenu";
+
+        //애니키 UI 오브젝트
+        public GameObject anyKey;
+        
         //애니키 UI를 보여주고 있는지 체크
         private bool isShow = false;
 
@@ -128,7 +128,8 @@ namespace MyDefence
         private void GotoMenu()
         {
             //Debug.Log("Goto Menu!!!");
-            SceneManager.LoadScene(loadToScene);
+            //SceneManager.LoadScene(loadToScene);
+            fader.FadeTo(loadToScene);
         }
 
         private void SpawnMonster()
