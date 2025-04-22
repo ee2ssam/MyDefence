@@ -16,6 +16,9 @@ namespace MyDefence
         //죽음 체크
         private bool isDeath = false;
 
+        //도착 체크
+        private bool isArrive = false;
+
         //이동 속도
         public float moveSpeed = 5f;
 
@@ -37,6 +40,13 @@ namespace MyDefence
         public Image healthBarImage;
         #endregion
 
+        #region Property
+        public bool IsArrive
+        {
+            get { return isArrive; }
+        }
+        #endregion
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -50,6 +60,9 @@ namespace MyDefence
         // Update is called once per frame
         void Update()
         {
+            if (isArrive)
+                return;
+
             //이동 구현
             Vector3 dir = target.position - this.transform.position;
             transform.Translate(dir.normalized * Time.deltaTime * moveSpeed, Space.World);
@@ -72,6 +85,9 @@ namespace MyDefence
             //종점 도착 판정
             if(wayPointIndex == WayPoints.wayPoints.Length - 1)
             {
+                //종점 도착 체크
+                isArrive = true;
+
                 //플레이어의 라이프 소모
                 PlayerStats.UseLife(1);
 
@@ -79,7 +95,9 @@ namespace MyDefence
                 WaveManager.enemyAlive--;
                 Debug.Log($"enemyAlive: {WaveManager.enemyAlive}");
 
-                Destroy(this.gameObject);
+                //공격 VFX, SFX
+
+                Destroy(this.gameObject, 1f);
                 return;
             }
 
@@ -90,6 +108,9 @@ namespace MyDefence
         //데미지 처리
         public void TakeDamage(float damage)
         {
+            if (isArrive)
+                return;
+
             //연산
             health -= damage;
             
