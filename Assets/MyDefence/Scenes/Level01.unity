@@ -2621,6 +2621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCheat: 1
   gameOverUI: {fileID: 1381618133}
+  unLockLevel: 2
 --- !u!1001 &691066477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5932,6 +5933,7 @@ MonoBehaviour:
   startButton: {fileID: 1083968210}
   waveInfo: {fileID: 1374399053}
   countText: {fileID: 1925263421}
+  gameManager: {fileID: 690729884}
 --- !u!4 &1366350119
 Transform:
   m_ObjectHideFlags: 0

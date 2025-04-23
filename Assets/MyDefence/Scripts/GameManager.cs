@@ -13,6 +13,10 @@ namespace MyDefence
         //UI
         public GameObject gameOverUI;
         private static bool isGameOver = false;
+
+        //레벨 클리어
+        [SerializeField]
+        private int unLockLevel = 2;
         #endregion
 
         #region Propeyty
@@ -57,6 +61,23 @@ namespace MyDefence
             isGameOver = true;
             gameOverUI.SetActive(true);
         }
+
+        //레벨 클리어 처리
+        public void LevelClear()
+        {
+            //데이터 처리 - 보상, 다음 언락 레벨 저장
+            //저장되어 있는 데이터 가져오기
+            int nowLevel = PlayerPrefs.GetInt("NowLevel", 1);
+            if(unLockLevel > nowLevel)
+            {
+                PlayerPrefs.SetInt("NowLevel", unLockLevel);
+            }
+            //...
+
+            //UI 보여주기, VFX, SFX 효과
+            Debug.Log("레벨 클리어");
+        }
+
 
         //Cheating
         //M키를 누르면 10만 골드 지급
