@@ -17,6 +17,7 @@ namespace MyDefence
         //레벨 클리어
         [SerializeField]
         private int unLockLevel = 2;
+        public GameObject levelClearUI;
         #endregion
 
         #region Propeyty
@@ -60,6 +61,7 @@ namespace MyDefence
         {
             isGameOver = true;
             gameOverUI.SetActive(true);
+            //levelClearUI.SetActive(true);
         }
 
         //레벨 클리어 처리
@@ -75,7 +77,7 @@ namespace MyDefence
             //...
 
             //UI 보여주기, VFX, SFX 효과
-            Debug.Log("레벨 클리어");
+            levelClearUI.SetActive(true);
         }
 
 

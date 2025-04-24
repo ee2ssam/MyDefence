@@ -97,7 +97,7 @@ namespace MyDefence
 
             enemyCount = wave.count;
             enemyAlive = wave.count;
-            Debug.Log($"enemyAlive 생성: {enemyAlive}");
+            //Debug.Log($"enemyAlive 생성: {enemyAlive}");
 
             //라운드 카운트
             PlayerStats.Rounds++;
@@ -137,7 +137,7 @@ namespace MyDefence
             startButton.SetActive(false);
             waveInfo.SetActive(true);
 
-            Debug.Log("웨이브 시작");
+            //Debug.Log("웨이브 시작");
             StartCoroutine(SpawnWave());
         }
     }

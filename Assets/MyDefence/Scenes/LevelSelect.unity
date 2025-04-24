@@ -649,8 +649,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1317632530}
   m_HandleRect: {fileID: 1317632529}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.5400697
+  m_Value: 1.0000002
+  m_Size: 0.54006976
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -35609,10 +35609,10 @@ RectTransform:
   - {fileID: 111279269}
   m_Father: {fileID: 941971572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 600, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1553246967
 MonoBehaviour:
@@ -50714,6 +50714,9 @@ MonoBehaviour:
   fader: {fileID: 1651183703}
   loadToScene: MainMenu
   contents: {fileID: 1367951381}
+  scrollRect: {fileID: 1553246966}
+  contentsRect: {fileID: 1367951381}
+  scrollbar: {fileID: 111279270}
 --- !u!4 &1766818898
 Transform:
   m_ObjectHideFlags: 0

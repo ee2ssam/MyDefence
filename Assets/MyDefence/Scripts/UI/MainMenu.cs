@@ -21,7 +21,7 @@ namespace MyDefence
         public void Quit()
         {
             //Cheating
-            PlayerPrefs.DeleteAll();
+            //PlayerPrefs.DeleteAll();
 
             Debug.Log("Quit Game!!!");
             //Unity 에디터에서 명령 무시, 빌드버전에서는 구동
