@@ -68,7 +68,7 @@ namespace MyDefence
             //Destroy(_target.gameObject);
 
             //attackDamage만큼 타겟의 Health 연산
-            Enemy enemy = _target.GetComponent<Enemy>();
+            IDamageable enemy = _target.GetComponent<IDamageable>();
             if(enemy != null)
             {
                 enemy.TakeDamage(attackDamage);
