@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 namespace MyDefence
 {
@@ -20,6 +21,9 @@ namespace MyDefence
 
         //웨이브 카운트
         private int waveCount = 0;
+
+        //UI - Text
+        public TextMeshProUGUI countdownText;
         #endregion
 
         #region Unity Event Method
@@ -40,6 +44,13 @@ namespace MyDefence
                 //타이머 초기화
                 countdown = 0f;
             }
+
+            //UI - 카운트다운 텍스트
+            //countdown 특정 범위(min, max) 설정 (- 값이 안되도록 설정)
+            countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+            //countdownText.text = string.Format("{0:00.00}", countdown); //실수(소수점 이하) 출력
+            countdownText.text = Mathf.Round(countdown).ToString();       //반올림하여 정수 출력
+
         }
         #endregion
 
