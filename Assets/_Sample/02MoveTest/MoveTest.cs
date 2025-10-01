@@ -64,7 +64,7 @@ namespace Sample
 
             //이동 방향 구하기 : (목표지점 - 현재지점) (도착위치 - 현재위치)
             //dir.normalized : 단위백터, 길이가 1인 백터, 정규화된 백터
-            //dir.magnitude : 백터의 길이, 크기
+            //dir.magnitude : 백터의 길이, 크기, 두백터간의 거리
             //Vector3 dir = target.position - this.transform.position;
             //this.transform.Translate(dir.normalized * Time.deltaTime * speed);
             //this.transform.Translate(dir.normalized * Time.deltaTime * speed, Space.Self);
@@ -90,7 +90,8 @@ Time.deltaTime : 한 프레임 돌아오는데 걸리는 시간
 Time.deltaTime : 0.1초
 10프레임 - 1초에 1unit 이동 (Time.deltaTime을 고려)
 
-this.transform.position += new Vector3(0f, 0f, 1f) * Time.deltaTime; //0.1씩 증가
+this.transform.position += new Vector3(0f, 0f, 1f) * Time.deltaTime * 10; //1씩 증가
+
 this.transform.position += new Vector3(0f, 0f, 1f) * Time.deltaTime; //0.1씩 증가
 this.transform.position += new Vector3(0f, 0f, 1f) * Time.deltaTime; //0.1씩 증가
 this.transform.position += new Vector3(0f, 0f, 1f) * Time.deltaTime; //0.1씩 증가

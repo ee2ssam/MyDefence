@@ -46,7 +46,6 @@ namespace MyDefence
         private void Arrive()
         {
             Destroy(this.gameObject);
-            Debug.Log("도착했다");
         }
         #endregion
     }
