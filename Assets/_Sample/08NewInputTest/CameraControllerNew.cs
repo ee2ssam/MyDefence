@@ -22,7 +22,8 @@ namespace Sample
         public float border = 10f;
         #endregion
 
-        /* 1) 스크립트를 이용하여 값 가져오기
+         
+        //1) 스크립트를 이용하여 값 가져오기
         #region Unity Event Test
         private void Awake()
         {
@@ -35,12 +36,16 @@ namespace Sample
         {
             //new inputsystem class 객체 활성화
             inputActions.Enable();
+            inputActions.Camera.Jump.performed += Jump;
+            //inputActions.Camera.Jump.started += Jump;
+            //inputActions.Camera.Jump.canceled += Jump;
         }
 
         private void OnDisable()
         {
             //new inputsystem class 객체 비활성화
             inputActions.Disable();
+            inputActions.Camera.Jump.performed -= Jump;
         }
 
         private void Update()
@@ -78,9 +83,20 @@ namespace Sample
             }
         }
         #endregion
-        */
 
-        /* 2) SendMessage 방법
+        #region Custom Method
+        public void Jump(InputAction.CallbackContext context)
+        {
+            //context.started   누르기 시작했을때
+            //context.performed 눌렀을때 (1번 호출)
+            //context.canceled    눌렀다가 뗄때
+            Debug.Log("점프 버튼을 눌렀습니다");
+        }
+        #endregion
+
+
+        //2) SendMessage 방법
+        /* 
         #region Unity Event Method
         private void Update()
         {
@@ -108,6 +124,7 @@ namespace Sample
         */
 
         //3) Unity Event 등록 방법
+        /*        
         #region Unity Event Method
         private void Update()
         {
@@ -123,7 +140,20 @@ namespace Sample
         {
             inputVector = context.ReadValue<Vector2>();
         }
+
+        public void Jump(InputAction.CallbackContext context)
+        {
+            //context.started   누르기 시작했을때
+            //context.performed 눌렀을때 (1번 호출)
+            //context.canceled    눌렀다가 뗄때
+
+            if(context.performed)
+            {
+                Debug.Log("점프 버튼을 눌렀습니다");
+            }
+        }
         #endregion
+        */
     }
 }
 
