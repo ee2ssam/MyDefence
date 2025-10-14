@@ -225,7 +225,7 @@ MonoBehaviour:
   attackRange: 12
   searchTimer: 0.2
   fireTimer: 4
-  bulletPrefab: {fileID: 8272213760514554569, guid: 20a7e8ceb5e30b448b9b00d90e06978b, type: 3}
+  bulletPrefab: {fileID: 3898243521992050529, guid: d334a81e5222831428be634ac5b283a3, type: 3}
   firePoint: {fileID: 5243556695448884078}
 --- !u!1 &7570619403883697807
 GameObject:

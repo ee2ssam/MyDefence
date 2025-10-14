@@ -15,11 +15,11 @@ namespace MyDefence
             BuildManager.Instance.SetTurretToBuild(BuildManager.Instance.machineGunPrefab);
         }
 
-        //다른 타워 버튼 선택시 호출되는 함수
-        public void SelectAnotherTower()
+        //로컷타워 버튼 선택시 호출되는 함수
+        public void SelectRocketTower()
         {
-            //Debug.Log("다른 타워를 건설될 터렛에 저장하였습니다");
-            BuildManager.Instance.SetTurretToBuild(BuildManager.Instance.anotherTowerPrefab);
+            //Debug.Log("로켓 타워 프리팹를 건설될 타워에 저장하였습니다");
+            BuildManager.Instance.SetTurretToBuild(BuildManager.Instance.rocketTowerPrefab);
         }
         #endregion
     }

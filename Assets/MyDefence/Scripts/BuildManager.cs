@@ -36,7 +36,7 @@ namespace MyDefence
         private GameObject turretToBuild;        
 
         public GameObject machineGunPrefab;
-        public GameObject anotherTowerPrefab;
+        public GameObject rocketTowerPrefab;
         #endregion
 
         #region Unity Event Method

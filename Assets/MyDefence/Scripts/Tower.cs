@@ -134,11 +134,14 @@ namespace MyDefence
             //Debug.Log("발사!!!");
             //총구(Fire Point) 위치에 탄환 객체 생성(Instiate)하기
             GameObject bullotGo = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
             Bullet bullet = bullotGo.GetComponent<Bullet>();
             if(bullet != null)
             {
                 bullet.SetTarget(target.transform);
             }
+            //일정시간 지나면 자동으로 킬
+            //Destroy(bullotGo, 3f);
         }
         #endregion
 
