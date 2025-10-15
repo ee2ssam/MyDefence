@@ -9,8 +9,14 @@ namespace MyDefence
     public class Tile : MonoBehaviour
     {
         #region Variables
+        //BuildManager(싱글톤) 객체 선언
+        private BuildManager buildManager;
+
         //타일에 설치된 타워 오브젝트 인스턴스
         private GameObject tower;
+
+        //타일에 설치된 타워 오브젝트 blueprint 객체(프리팹, 가격, 설치조정위치...)
+        private TowerBlueprint blueprint;
 
         //랜더러 컴포넌트 인스턴스 변수 선언
         private Renderer renderer;
@@ -32,6 +38,7 @@ namespace MyDefence
         {
             //참조
             renderer = this.transform.GetComponent<Renderer>();
+            buildManager = BuildManager.Instance;
 
             //초기화
             startColor = renderer.material.color;
@@ -47,6 +54,13 @@ namespace MyDefence
                 return;
             }
 
+            //만약 타워를 선택하지 않았으면 설치하지 못한다
+            if (buildManager.CannotBuild)
+            {
+                Debug.Log("설치할 타워가 없습니다");
+                return;
+            }
+
             //만약 타일에 타워오브젝트가 있으면 설치하지 못한다
             if (tower != null)
             {
@@ -54,12 +68,7 @@ namespace MyDefence
                 return;
             }
 
-            //만약 타워를 선택하지 않았으면 설치하지 못한다
-            if (BuildManager.Instance.GetTurretToBuild() == null)
-            {
-                Debug.Log("설치할 타워가 없습니다");
-                return;
-            }
+            blueprint = buildManager.GetTurretToBuild();
 
             //Debug.Log("마우스가 좌클릭하여 타일 선택 - 여기에 타워 건설");
             BuildTower();
@@ -74,7 +83,7 @@ namespace MyDefence
             }
 
             //만약 타워를 선택하지 않았으면 변경되지 않는다
-            if (BuildManager.Instance.GetTurretToBuild() == null)
+            if (buildManager.CannotBuild)
             {   
                 return;
             }
@@ -94,10 +103,22 @@ namespace MyDefence
         //타워 건설
         private void BuildTower()
         {
-            tower = Instantiate(BuildManager.Instance.GetTurretToBuild(), this.transform.position, Quaternion.identity);
+            //건설비용 체크
+            if(buildManager.HasBuildCost == false)
+            {
+                Debug.Log("건설 비용이 부족합니다");
+                return;
+            }
 
-            //turretToBuild = null; 건설 후 다시 건설하지 못하게 한다
-            BuildManager.Instance.SetTurretToBuild(null);
+            //건설 비용 지불
+            PlayerStats.UseMoney(blueprint.cost);
+
+            tower = Instantiate(blueprint.prefab, this.transform.position + blueprint.offsetPos, Quaternion.identity);
+
+            //towerToBuild = null; 건설 후 다시 건설하지 못하게 한다
+            buildManager.SetTurretToBuild(null);
+
+            Debug.Log($"건설하고 남은 소지금: {PlayerStats.Money}");
         }
         #endregion
     }
