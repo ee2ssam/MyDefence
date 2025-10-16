@@ -123,4 +123,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverColor: {r: 0.58018863, g: 1, b: 0.16037732, a: 1}
   hoverMaterial: {fileID: 2100000, guid: 558b753725529da43ad9efd1bcabbd02, type: 2}
-  towerPrefab: {fileID: 2492382370837883844, guid: d5a7d238f690f1748a892d8d2263f64d, type: 3}
+  moneyMaterial: {fileID: 2100000, guid: b4cbaec1ee9434b4e88910346a54c168, type: 2}
+  buildEffectPrefab: {fileID: 7250217547014553838, guid: 35ae11e184be74445abe7491f048ecbe, type: 3}
