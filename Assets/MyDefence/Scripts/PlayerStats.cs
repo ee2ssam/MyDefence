@@ -43,7 +43,7 @@ namespace MyDefence
             //초기화
             money = startMoney; //초기 소지금 지급
             lives = startLife;  //초기 생명 갯수 지급
-            Debug.Log($"초기 소지금 {startMoney}골드를 지급하였습니다");
+            //Debug.Log($"초기 소지금 {startMoney}골드를 지급하였습니다");
         }
         #endregion
 
