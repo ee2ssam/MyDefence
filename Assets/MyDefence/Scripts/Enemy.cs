@@ -6,7 +6,7 @@ namespace MyDefence
     /// <summary>
     /// Enemy 를 관리하는 클래스
     /// </summary>
-    public class Enemy : MonoBehaviour
+    public class Enemy : MonoBehaviour, IDamageable
     {
         #region Variables
         //이동 목표 위치를 가지고 있는 오브젝트
