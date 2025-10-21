@@ -21,6 +21,9 @@ namespace MyDefence
         //초기 지급 생명 갯수
         [SerializeField]
         private int startLife = 10;
+
+        //웨이브 카운트
+        private static int rounds;
         #endregion
 
         #region Property
@@ -35,6 +38,13 @@ namespace MyDefence
         {
             get { return lives; }
         }
+
+        //웨이브 카운트 속성
+        public static int Rounds
+        { 
+            get { return rounds; }
+            set { rounds = value; }
+        }
         #endregion
 
         #region Unity Event Method
@@ -43,6 +53,8 @@ namespace MyDefence
             //초기화
             money = startMoney; //초기 소지금 지급
             lives = startLife;  //초기 생명 갯수 지급
+            rounds = 0;         //웨이브 카운트 초기화
+
             //Debug.Log($"초기 소지금 {startMoney}골드를 지급하였습니다");
         }
         #endregion
