@@ -69,7 +69,7 @@ namespace MyDefence
             //만약 타일에 타워오브젝트가 있으면 설치하지 못한다
             if (tower != null)
             {
-                Debug.Log("타워를 설치하지 못합니다");
+                Debug.Log("타워 UI를 보여 줍니다");
                 return;
             }
 

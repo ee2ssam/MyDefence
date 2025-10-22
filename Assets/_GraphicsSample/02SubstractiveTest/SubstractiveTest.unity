@@ -508,8 +508,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.5
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 1751175028}
   - component: {fileID: 1751175027}
   - component: {fileID: 1751175031}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -836,7 +836,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 3
   m_IsActive: 1
 --- !u!65 &1831391955
 BoxCollider:
