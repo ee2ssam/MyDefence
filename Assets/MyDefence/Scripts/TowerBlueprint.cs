@@ -11,6 +11,10 @@ namespace MyDefence
     {
         public GameObject prefab;   //타워 건설에 필요한 프리팹 오브젝트
         public int cost;            //타워 건설 비용
+
+        public GameObject upgradePrefab; //건설된 타워를 업그레이드 하기 위한 프리팹 오브젝트
+        public int upgradeCost;          //건설된 타워의 업그레이드 비용
+
         public Vector3 offsetPos;   //타워 건설시 위치 조정 값
 
     }

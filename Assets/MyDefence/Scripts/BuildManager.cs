@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace MyDefence
 {
@@ -34,6 +35,12 @@ namespace MyDefence
         //타일에 설치할 타워 blueprint(프리팹, 가격, 위치정보...)를 저장하는 변수
         //여러개의 타워 blueprint중 선택된 타워 blueprint을 저장하는 변수
         private TowerBlueprint towerToBuild;
+
+        //타일 UI
+        public TileUI tileUI;
+
+        //선택된 타일 저장(타일 UI가 있는 타일)
+        private Tile selectTile;
         #endregion
 
         #region Property
@@ -69,6 +76,33 @@ namespace MyDefence
         public void SetTurretToBuild(TowerBlueprint tower)
         {
             towerToBuild = tower;
+        }
+
+        //타워오브젝트가 설치된 타일을 선택, 선택된 타일 정보를 매개변수로 받아온다
+        public void SelectTile(Tile tile)
+        {
+            //저장된 타일과 선택된 타일 체크
+            if(tile == selectTile)
+            {                
+                DeselectTile();
+                return;
+            }
+
+            //설치될 타워 정보 초기화
+            towerToBuild = null;
+
+            selectTile = tile;
+            tileUI.ShowTileUI(selectTile);
+        }
+
+        //선택된 타일 해제, 선택된 타일 초기화
+        public void DeselectTile()
+        {
+            //설치될 타워 정보 초기화
+            towerToBuild = null;
+
+            tileUI.HideTileUI();
+            selectTile = null;
         }
         #endregion
     }
