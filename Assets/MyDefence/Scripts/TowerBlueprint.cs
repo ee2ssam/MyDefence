@@ -17,5 +17,10 @@ namespace MyDefence
 
         public Vector3 offsetPos;   //타워 건설시 위치 조정 값
 
+        //판매 가격: 빌드 비용의 반값
+        public int GetSellCost()
+        {
+            return cost / 2;
+        }
     }
 }

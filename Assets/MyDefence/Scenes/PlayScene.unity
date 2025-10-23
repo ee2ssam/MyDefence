@@ -958,7 +958,7 @@ GameObject:
   - component: {fileID: 334603834}
   - component: {fileID: 334603833}
   m_Layer: 5
-  m_Name: CostText
+  m_Name: SellCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1965,6 +1965,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 808604966}
+  upgradeCostText: {fileID: 836479128}
+  upgradeButton: {fileID: 1785506385}
+  sellCostText: {fileID: 334603833}
 --- !u!4 &708391860
 Transform:
   m_ObjectHideFlags: 0
@@ -2818,7 +2821,7 @@ GameObject:
   - component: {fileID: 836479129}
   - component: {fileID: 836479128}
   m_Layer: 5
-  m_Name: CostText
+  m_Name: UpgradeCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6525,13 +6528,29 @@ PrefabInstance:
       value: BulidMenu
       objectReference: {fileID: 0}
     - target: {fileID: 4949889151952085131, guid: ffc40da4ceb5bf04ab4367ce210cd742, type: 3}
+      propertyPath: laserTower.upgradeCost
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949889151952085131, guid: ffc40da4ceb5bf04ab4367ce210cd742, type: 3}
       propertyPath: machineGun.upgradeCost
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 4949889151952085131, guid: ffc40da4ceb5bf04ab4367ce210cd742, type: 3}
+      propertyPath: rocketTower.upgradeCost
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949889151952085131, guid: ffc40da4ceb5bf04ab4367ce210cd742, type: 3}
+      propertyPath: laserTower.upgradePrefab
+      value: 
+      objectReference: {fileID: 5752776791105320393, guid: 6b4f4773c2ab1a94fb0a394b735e98aa, type: 3}
+    - target: {fileID: 4949889151952085131, guid: ffc40da4ceb5bf04ab4367ce210cd742, type: 3}
       propertyPath: machineGun.upgradePrefab
       value: 
       objectReference: {fileID: 4810845379891226251, guid: 6353c6cbedfbfa64b9a855a29e789fd9, type: 3}
+    - target: {fileID: 4949889151952085131, guid: ffc40da4ceb5bf04ab4367ce210cd742, type: 3}
+      propertyPath: rocketTower.upgradePrefab
+      value: 
+      objectReference: {fileID: 5307664645237220625, guid: 5bb93e5c890f9d245a2d69c96a2e04a9, type: 3}
     - target: {fileID: 6548988349214769025, guid: ffc40da4ceb5bf04ab4367ce210cd742, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

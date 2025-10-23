@@ -27,6 +27,7 @@ namespace MyDefence
                 return;
             }
             instance = this;
+
             //DontDestroyOnLoad(this.gameObject);
         }
         #endregion
