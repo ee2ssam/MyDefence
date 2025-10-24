@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/MyDefence/Scenes/Title.unity
+    guid: 48b3987c8cf382240a17b55f500f302e
+  - enabled: 1
+    path: Assets/MyDefence/Scenes/MainMenu.unity
+    guid: 0e29cd5b3a56f41409a56c9267abb4ab
+  - enabled: 1
     path: Assets/MyDefence/Scenes/PlayScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
