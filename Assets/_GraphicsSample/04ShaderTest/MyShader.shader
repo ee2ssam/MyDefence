@@ -1,4 +1,4 @@
-Shader "Unlit/MyShader"
+Shader "Custom/MyShader"
 {
     Properties
     {
@@ -80,4 +80,50 @@ ShaderLab 으로 작성할수 있는 셰이더 프로그램
 : 고정 함수 셰이더 - x
 : 표면 셰이더 - surface shader
 : 버텍스/프래그먼트 셰이더 : 6.0 
+
+Shader "Custom/MyShader"    //셰이더 경로 및 셰이더 이름 정의
+{
+    //인스펙터창에서 입력 받는 값 정의
+    Properties
+    {
+        
+    }
+    //고사양
+    SubShader
+    {
+        Pass
+        {
+
+        }
+        Pass
+        {
+
+        }
+    }
+    //중사양
+    SubShader
+    {
+        Pass
+        {
+
+        }
+        Pass
+        {
+
+        }
+    }
+    //저사양
+    SubShader
+    {
+        Pass
+        {
+
+        }
+        Pass
+        {
+
+        }
+    }
+    Fallback "Diffuse"
+}
 */
