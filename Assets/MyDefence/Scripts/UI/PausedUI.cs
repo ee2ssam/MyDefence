@@ -12,6 +12,12 @@ namespace MyDefence
         #region Variables
         //Paused UI 게임 오브젝트
         public GameObject paused;
+
+        //씬 페이더
+        public SceneFader fader;
+        //메뉴 씬 이름
+        [SerializeField]
+        private string loadToScene = "MainMenu";
         #endregion
 
         #region Unity Event Method
@@ -44,15 +50,18 @@ namespace MyDefence
 
         public void MainMenu()
         {
-            Debug.Log("Goto MainMenu!!!");
+            //Debug.Log("Goto MainMenu!!!");
+            fader.FadeTo(loadToScene);
             Time.timeScale = 1f;
         }
 
         public void Restart()
         {
             //현재 플레이하고 있는 씬을 새로 로드하기
-            int nowBuildIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(nowBuildIndex);
+            /*int nowBuildIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(nowBuildIndex);*/
+            string nowSceneName = SceneManager.GetActiveScene().name;
+            fader.FadeTo(nowSceneName);
 
             Time.timeScale = 1f;
         }
