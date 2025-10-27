@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 namespace MyDefence
 {
@@ -35,6 +35,9 @@ namespace MyDefence
         //죽음 보상
         [SerializeField]
         private int rewardMoney = 50;
+
+        //UI
+        public Image hpBarImage;
         #endregion
 
 
@@ -86,8 +89,11 @@ namespace MyDefence
             health -= damage;
             //Debug.Log($"Enemy Health: {health}");
 
+            //UI
+            hpBarImage.fillAmount = health / startHealth;
+
             //죽음 체크
-            if(health <= 0 && isDeath == false)
+            if (health <= 0 && isDeath == false)
             {
                 health = 0;
                 Die();
