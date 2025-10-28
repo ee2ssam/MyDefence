@@ -79,6 +79,9 @@ namespace MyDefence
             //생명 사용
             PlayerStats.UseLives(1);
 
+            //살아 있는 적의 수를 줄인다
+            WaveSpawnManager.enemyAlive--;
+
             //Enemy 킬
             Destroy(this.gameObject);
         }
@@ -110,6 +113,9 @@ namespace MyDefence
             //effct 효과 (vfx, sfx)
             GameObject effectGo = Instantiate(deathEffectPrefab, this.transform.position, Quaternion.identity);
             Destroy(effectGo, 2f);
+
+            //살아 있는 적의 수를 줄인다
+            WaveSpawnManager.enemyAlive--;
 
             //보상 처리(골드, 경험치, 아이템..)
             PlayerStats.AddMoney(rewardMoney);
