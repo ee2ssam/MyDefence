@@ -58,10 +58,9 @@ namespace MyDefence
         public void Restart()
         {
             //현재 플레이하고 있는 씬을 새로 로드하기
-            /*int nowBuildIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(nowBuildIndex);*/
-            string nowSceneName = SceneManager.GetActiveScene().name;
-            fader.FadeTo(nowSceneName);
+            int nowBuildIndex = SceneManager.GetActiveScene().buildIndex;
+            //SceneManager.LoadScene(nowBuildIndex);
+            fader.FadeTo(nowBuildIndex);
 
             Time.timeScale = 1f;
         }

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 namespace MyDefence
@@ -10,11 +9,15 @@ namespace MyDefence
     public class Title : MonoBehaviour
     {
         #region Variables
+        public SceneFader fader;
+
         [SerializeField]
         private string loadToScene = "MainMenu";
+
         [SerializeField]
         private float titleTimer = 10f;
         private float countdown = 0f;
+
         [SerializeField]
         private float showTimer = 3f;
         //쑈타임 체크
@@ -67,7 +70,7 @@ namespace MyDefence
         #region Custom Method
         private void GotoMainMenu()
         {
-            SceneManager.LoadScene(loadToScene);
+            fader.FadeTo(loadToScene);
         }
 
         private void ShowAnyKey()

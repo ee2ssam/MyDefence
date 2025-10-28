@@ -1907,6 +1907,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dd2641a3e02f8b498f0695c48b854ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fader: {fileID: 1857178289}
+  loadToScene: MainMenu
   roundsText: {fileID: 1927768132}
 --- !u!95 &606796173
 Animator:
@@ -6684,6 +6686,10 @@ PrefabInstance:
     - target: {fileID: 1895230860993540738, guid: daef6f393a8544a46a52a30b101dac39, type: 3}
       propertyPath: m_Name
       value: SceneFader
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674445850053905700, guid: daef6f393a8544a46a52a30b101dac39, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7277033899613588935, guid: daef6f393a8544a46a52a30b101dac39, type: 3}
       propertyPath: m_LocalPosition.x

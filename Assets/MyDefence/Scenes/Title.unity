@@ -759,6 +759,17 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &1489757214 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5763545852059706805, guid: daef6f393a8544a46a52a30b101dac39, type: 3}
+  m_PrefabInstance: {fileID: 588291842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 677b888a3112f604ba05b5dd33db5792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1953839796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,6 +1011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53de486018af09b479f4f7cc449ec394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fader: {fileID: 1489757214}
   loadToScene: MainMenu
   titleTimer: 10
   showTimer: 3
