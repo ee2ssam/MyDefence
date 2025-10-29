@@ -135,8 +135,12 @@ namespace MyDefence
             {
                 Debug.Log("Level Clear");
                 //게임 데이터 저장
-                PlayerPrefs.SetInt("ClearLevel", nowLevel);
-                Debug.Log($"Save clearLevel: {nowLevel}");
+                int saveLevel = PlayerPrefs.GetInt("ClearLevel", 0);
+                if(saveLevel < nowLevel)
+                {
+                    PlayerPrefs.SetInt("ClearLevel", nowLevel);
+                    //Debug.Log($"Save clearLevel: {nowLevel}");
+                }
 
                 this.enabled = false;
                 return;
