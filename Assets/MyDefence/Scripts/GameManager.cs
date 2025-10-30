@@ -43,6 +43,13 @@ namespace MyDefence
         #endregion
 
         #region Unity Event Method
+        private void Start()
+        {
+            //초기화
+            IsGameOver = false;
+            IsLevelClear = false;
+        }
+
         private void Update()
         {
             if (IsGameOver)

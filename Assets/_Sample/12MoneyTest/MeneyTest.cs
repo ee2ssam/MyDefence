@@ -15,7 +15,7 @@ namespace Sample
 
         //초기 소지금
         [SerializeField]
-        private int startGold = 1000;
+        private int startGold = 1000000;
 
         //소지금 UI Text
         public TextMeshProUGUI goldText;
@@ -119,3 +119,15 @@ namespace Sample
         #endregion
     }
 }
+
+
+/*
+멤버 변수값 초기화
+1. 변수 선언과 동시에 초기값을 설정한다    1000000
+2. 인스펙터 창에서 초기값을 직접 입력한다  3000
+3. Awake, Start 함수에서 초기값을 설정한다  2000
+
+
+
+
+*/

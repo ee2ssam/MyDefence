@@ -1290,7 +1290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc3cf7aecf6e614792b71c3d4893030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startGold: 1000
+  startGold: 3000
   goldText: {fileID: 357708626}
   button1000: {fileID: 1526163846}
   button9000: {fileID: 404846435}
