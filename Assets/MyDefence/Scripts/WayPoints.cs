@@ -18,7 +18,7 @@ namespace MyDefence
             //초기화
             //WayPoint 배열 요소수 생성 - WayPoint 갯수 가져오기
             points = new Transform[this.transform.childCount];
-            //Debug.Log($"WayPoint의 갯수: {this.transform.childCount}");
+            Debug.Log($"WayPoint의 갯수: {this.transform.childCount}");
 
             for (int i = 0; i < points.Length; i++)
             {

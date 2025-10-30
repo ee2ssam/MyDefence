@@ -18,7 +18,7 @@ namespace MyDefence
         #region Unity Event Method
         private void OnEnable()
         {
-            StartCoroutine(AnimateNumerText(15));
+            StartCoroutine(AnimateNumerText(PlayerStats.Rounds));
         }
         #endregion
 

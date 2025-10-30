@@ -3636,6 +3636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 606796170}
   levelClearUI: {fileID: 928948624}
+  nowLevel: 1
   isCheating: 1
 --- !u!114 &881135534
 MonoBehaviour:
@@ -5799,7 +5800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1412293853
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6960,7 +6961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1852652666
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7744,7 +7745,6 @@ MonoBehaviour:
   startButton: {fileID: 1003496796}
   waveCountUI: {fileID: 212058269}
   waveCountText: {fileID: 1210647817}
-  nowLevel: 1
 --- !u!1 &2021723681
 GameObject:
   m_ObjectHideFlags: 0
