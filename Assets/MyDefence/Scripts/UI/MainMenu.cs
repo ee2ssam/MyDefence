@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace MyDefence
 {
+    /// <summary>
+    /// 메인메뉴 씬을 관리하는 클래스
+    /// </summary>
     public class MainMenu : MonoBehaviour
     {
         #region Variables

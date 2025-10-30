@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 namespace MyDefence
 {
+    /// <summary>
+    /// 레벨 셀렉트씬을 관리하는 클래스
+    /// </summary>
     public class LevelSelect : MonoBehaviour
     {
         #region Variables

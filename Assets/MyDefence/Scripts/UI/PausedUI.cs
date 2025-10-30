@@ -23,8 +23,12 @@ namespace MyDefence
         #region Unity Event Method
         private void Update()
         {
+            //게임오버 체크
+            if (GameManager.IsGameOver)
+                return;
+
             //ESC 키 입력시 Pause 활성화, 다시 ESC 키 입력시 비활성화
-            if(Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 Toggle();
             }
