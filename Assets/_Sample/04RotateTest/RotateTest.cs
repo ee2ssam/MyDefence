@@ -57,6 +57,7 @@ namespace Sample
             Vector3 dir = target.position - this.transform.position;
             this.transform.rotation = Quaternion.LookRotation(dir);
 
+            //이동
             //this.transform.Translate(dir.normalized * Time.deltaTime * moveSpeed, Space.Self);
             this.transform.Translate(dir.normalized * Time.deltaTime * moveSpeed, Space.World);
 

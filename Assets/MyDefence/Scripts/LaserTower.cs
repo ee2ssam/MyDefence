@@ -79,6 +79,11 @@ namespace MyDefence
         {            
             float frameDamage = Time.deltaTime * laserDamage;   //프레임당 데미지
             IDamageable damageable = target.GetComponent<IDamageable>();
+            if (damageable == null)
+            {
+                damageable = target.GetComponentInParent<IDamageable>();
+            }
+
             if (damageable != null)
             {
                 //데미지 주기

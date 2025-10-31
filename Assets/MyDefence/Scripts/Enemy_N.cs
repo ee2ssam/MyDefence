@@ -64,7 +64,8 @@ namespace MyDefence
         {
             //타겟을 향해 이동
             Vector3 dir = target.position - this.transform.position;
-            this.transform.Translate(dir.normalized * Time.deltaTime * speed);
+            this.transform.rotation = Quaternion.LookRotation(dir);
+            this.transform.Translate(dir.normalized * Time.deltaTime * speed, Space.World);
 
             //도착 판정
             //타겟과 Eenmy와 거리를 구해서 일정거리안에 들어오면 도착이라고 판정한다

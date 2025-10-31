@@ -118,14 +118,17 @@ namespace MyDefence
         protected void LockOn()
         {
             //방향을 구하기
-            Vector3 dir = target.transform.position - this.transform.position;
+            Vector3 dir = target.transform.position - partToRotate.position;
             //방향에 회전값을 구하기
             Quaternion lookRotation = Quaternion.LookRotation(dir);
             Quaternion lerpRotation =
                 Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * rotateSpeed);
-            Vector3 eulerValue = lerpRotation.eulerAngles;
+
             //Y축으로만 회전하기
-            partToRotate.rotation = Quaternion.Euler(0f, eulerValue.y, 0f);
+            //Vector3 eulerValue = lerpRotation.eulerAngles;
+            //partToRotate.rotation = Quaternion.Euler(0f, eulerValue.y, 0f);
+            //x,y,z축 회전
+            partToRotate.rotation = lerpRotation;
         }
 
         //발사

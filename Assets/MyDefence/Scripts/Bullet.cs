@@ -65,7 +65,7 @@ namespace MyDefence
             GameObject effectGo = Instantiate(impactPrefab, this.transform.position, Quaternion.identity);
             Destroy(effectGo, 3f);
 
-            //Debug.Log("Hit Enemy!!!");
+            Debug.Log("Hit Enemy!!!");
             //타격당한 적에게 데미지 주기
             Damage(target);
 
@@ -87,6 +87,11 @@ namespace MyDefence
             }*/
 
             IDamageable damageable = _target.GetComponent<IDamageable>();
+            if(damageable == null)
+            {
+                damageable = _target.GetComponentInParent<IDamageable>();
+            }
+
             if(damageable != null)
             {
                 damageable.TakeDamage(attackDamage);
