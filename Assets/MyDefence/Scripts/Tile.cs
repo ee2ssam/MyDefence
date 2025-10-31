@@ -67,7 +67,7 @@ namespace MyDefence
             //만약 타일에 타워오브젝트가 있으면 설치하지 못한다
             if (tower != null)
             {
-                Debug.Log("타워오브젝트가 설치된 타일을 선택했습니다");
+                //Debug.Log("타워오브젝트가 설치된 타일을 선택했습니다");
                 buildManager.SelectTile(this);
                 return;
             }
@@ -75,7 +75,7 @@ namespace MyDefence
             //만약 타워를 선택하지 않았으면 설치하지 못한다
             if (buildManager.CannotBuild)
             {
-                Debug.Log("설치할 타워가 없습니다");
+                //Debug.Log("설치할 타워가 없습니다");
                 return;
             }
 
@@ -125,7 +125,7 @@ namespace MyDefence
             //건설비용 체크
             if(buildManager.HasBuildCost == false)
             {
-                Debug.Log("건설 비용이 부족합니다");
+                //Debug.Log("건설 비용이 부족합니다");
                 return;
             }
 
@@ -152,7 +152,7 @@ namespace MyDefence
             //업그레이드 비용 체크
             if(PlayerStats.HasMoney(blueprint.upgradeCost) == false)
             {
-                Debug.Log("업그레이드 비용이 부족합니다");
+                //Debug.Log("업그레이드 비용이 부족합니다");
                 return;
             }
 

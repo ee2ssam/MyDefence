@@ -6,10 +6,12 @@ namespace MyDefence
     /// <summary>
     /// Enemy 를 관리하는 클래스
     /// </summary>
-    public class Enemy : MonoBehaviour, IDamageable
+    public class Enemy_N : MonoBehaviour, IDamageable
     {
         #region Variables
-        //이동 목표 위치를 가지고 있는 오브젝트
+        //이동 목표 노드
+        private Node nextNode;
+        //이동 목표 위치를 가지고 있는 오브젝트, 노드를 가지고 있는 오브젝트
         private Transform target;
 
         //이동 속도
@@ -54,7 +56,7 @@ namespace MyDefence
             wayPointIndex = 0;
 
             //이동 목표지점 0번으로 설정
-            target = WayPoints.points[wayPointIndex];
+            //target = WayPoints.points[wayPointIndex];
         }
 
         // Update is called once per frame
@@ -79,19 +81,27 @@ namespace MyDefence
         #endregion
 
         #region Custom Method
+        //다음 Node 설정
+        public void SetNextNode(Node next)
+        {
+            //nextNode : 나 다음에 이동할 노드(next)를 가지고 있다
+            nextNode = next;
+            target = nextNode.transform;
+        }
+
         //다음 타겟 설정
         private void SetNextTarget()
         {
+            //다음에 이동할 노드 가져오기
+            Node next = nextNode.GetNextNode();
             //종점 체크
-            if(wayPointIndex >= WayPoints.points.Length-1)
+            if (next == null)
             {
-                //Debug.Log("종점 도착");
                 Arrive();
                 return;
             }
-            
-            wayPointIndex++;            
-            target = WayPoints.points[wayPointIndex];
+
+            SetNextNode(next);
         }
 
         //종점 도착

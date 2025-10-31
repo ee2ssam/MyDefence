@@ -7,6 +7,7 @@ namespace MyDefence
     /// </summary>
     public interface IDamageable
     {
-        public void TakeDamage(float damage);
+        public void TakeDamage(float damage);   //데미지 주기
+        public void Slow(float rate);           //이동속도 느리게 하기
     }
 }

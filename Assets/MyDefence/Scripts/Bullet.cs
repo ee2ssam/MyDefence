@@ -80,12 +80,19 @@ namespace MyDefence
             //Destroy(_target.gameObject);
 
             // _target에게 attackDamage를 준다
-            Enemy enemy = _target.GetComponent<Enemy>();
+            /*Enemy enemy = _target.GetComponent<Enemy>();
             if (enemy != null)
             {
                 enemy.TakeDamage(attackDamage);
+            }*/
+
+            IDamageable damageable = _target.GetComponent<IDamageable>();
+            if(damageable != null)
+            {
+                damageable.TakeDamage(attackDamage);
             }
-            
+
+
         }
         #endregion
     }

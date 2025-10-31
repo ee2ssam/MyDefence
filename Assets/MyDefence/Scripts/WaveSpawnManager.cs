@@ -16,8 +16,9 @@ namespace MyDefence
         //웨이브 데이터 셋팅: 프리팹, 생성갯수, 생성 딜레이
         public Wave[] waves;        // waves[0] ~ waves[4]
 
-        //적 프리팹 오브젝트 - 원본
-        public GameObject enemyPrefab;
+        //스폰 후 이동할 첫번째 노드
+        [SerializeField]
+        private Node next;
 
         //public Transform start;  == this.transform
 
@@ -110,7 +111,15 @@ namespace MyDefence
         //시작점 위치에 enemy 1개 생성
         void EnemySpawn(GameObject prefab)
         {
-            Instantiate(prefab, this.transform.position, Quaternion.identity);
+            GameObject enemyGo = Instantiate(prefab, this.transform.position, Quaternion.identity);
+
+            //생성한 enemy에서 Enemy_N 컴포넌트 가져오기
+            Enemy_N enemy_N = enemyGo.GetComponent<Enemy_N>();
+            if (enemy_N != null)
+            {
+                //다음 노드 셋팅
+                enemy_N.SetNextNode(next);
+            }
         }
 
         //WaveStart 버튼 클릭시 호출
