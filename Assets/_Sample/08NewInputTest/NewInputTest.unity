@@ -723,7 +723,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1196,7 +1197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4489dc0a625c5c14d9e001dffdc4787d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  machineGunPrefab: {fileID: 2492382370837883844, guid: d5a7d238f690f1748a892d8d2263f64d, type: 3}
+  tileUI: {fileID: 0}
 --- !u!4 &1042891842
 Transform:
   m_ObjectHideFlags: 0
@@ -1748,9 +1749,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19dabb101d12c764ebf082195e4a79ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8656447022745702264, guid: b4fc913505dc738439c1fd83919846fb, type: 3}
+  waves: []
+  next: {fileID: 0}
   spawnTimer: 5
-  countdownText: {fileID: 536998592}
+  startButton: {fileID: 0}
+  waveCountUI: {fileID: 0}
+  waveCountText: {fileID: 0}
 --- !u!1001 &2051844733
 PrefabInstance:
   m_ObjectHideFlags: 0

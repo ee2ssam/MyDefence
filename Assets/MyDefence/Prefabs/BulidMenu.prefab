@@ -193,14 +193,20 @@ MonoBehaviour:
   machineGun:
     prefab: {fileID: 2492382370837883844, guid: d5a7d238f690f1748a892d8d2263f64d, type: 3}
     cost: 100
+    upgradePrefab: {fileID: 0}
+    upgradeCost: 0
     offsetPos: {x: 0, y: 0, z: 0}
   rocketTower:
     prefab: {fileID: 2847924583314864897, guid: 0058d7a0d8df0e8489f5f5816c224f34, type: 3}
     cost: 250
+    upgradePrefab: {fileID: 0}
+    upgradeCost: 0
     offsetPos: {x: 0, y: 0, z: 0}
   laserTower:
     prefab: {fileID: 2911990652140137131, guid: ac810c5df4185b048a4cf5c118f4626e, type: 3}
     cost: 350
+    upgradePrefab: {fileID: 0}
+    upgradeCost: 0
     offsetPos: {x: 0, y: 0, z: 0}
 --- !u!1 &2585115243634135624
 GameObject:

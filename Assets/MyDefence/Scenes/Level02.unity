@@ -1061,7 +1061,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 34c40c6fc358ec840be4475fa23d374d, type: 2}
   m_sharedMaterial: {fileID: 7590404104522321789, guid: 34c40c6fc358ec840be4475fa23d374d, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 7590404104522321789, guid: 34c40c6fc358ec840be4475fa23d374d, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -4757,7 +4758,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 34c40c6fc358ec840be4475fa23d374d, type: 2}
   m_sharedMaterial: {fileID: 7590404104522321789, guid: 34c40c6fc358ec840be4475fa23d374d, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 7590404104522321789, guid: 34c40c6fc358ec840be4475fa23d374d, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -7357,7 +7359,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 34c40c6fc358ec840be4475fa23d374d, type: 2}
   m_sharedMaterial: {fileID: 7590404104522321789, guid: 34c40c6fc358ec840be4475fa23d374d, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 7590404104522321789, guid: 34c40c6fc358ec840be4475fa23d374d, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -8242,7 +8245,7 @@ MonoBehaviour:
   - prefab: {fileID: 8656447022745702264, guid: 719ea314bc67fef409e5dce4f0246799, type: 3}
     count: 10
     delayTime: 0.33
-  enemyPrefab: {fileID: 8656447022745702264, guid: b4fc913505dc738439c1fd83919846fb, type: 3}
+  next: {fileID: 0}
   spawnTimer: 5
   startButton: {fileID: 1003496796}
   waveCountUI: {fileID: 212058269}

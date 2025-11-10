@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 8432911301890619444}
   - component: {fileID: 1866163703853673231}
   - component: {fileID: 2081418651615917068}
+  - component: {fileID: 939930554693304719}
   m_Layer: 0
   m_Name: Enemy_Simple
   m_TagString: Enemy
@@ -381,12 +382,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a326d422f92d01e4496e301291a5970a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  startSpeed: 4
   startHealth: 100
   deathEffectPrefab: {fileID: 7672034015978270049, guid: 32eefe8425b35fb4ebf23b7de91fb857, type: 3}
   rewardMoney: 50
   hpBarImage: {fileID: 7541495556216056469}
+--- !u!114 &939930554693304719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8656447022745702264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970d5899374924445ab367f1ec234459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  startSpeed: 4
 --- !u!1 &9176376171974765194
 GameObject:
   m_ObjectHideFlags: 0
