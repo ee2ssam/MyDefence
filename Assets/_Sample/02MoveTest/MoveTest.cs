@@ -65,7 +65,7 @@ namespace MySample
             //Translate
             //this.transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
-            //타겟까지 이동(dir(방향), Time.deltaTime, speed)
+            //타겟까지 이동에 필요한 요소 3가지 (dir(방향), Time.deltaTime, speed)
             //dir.normalized : dir방향으로 크기 1인 백터, 단위백터, 정규화된 백터 
             //dir.magnitude : dir의 크기, 백터의 크기, 길이
             //이동 방향 구하기 : 목표지점 - 현재지점, 도착 예정위치 - 출발(현재) 위치
