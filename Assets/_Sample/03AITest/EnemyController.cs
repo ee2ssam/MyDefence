@@ -2,9 +2,15 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
     public float speed = 3.0f;
     public float arrivalDistance = 0.1f;
+
+    private void Start()
+    {
+        //타겟(이동 목적지) 찾아오기
+        target = GameObject.FindGameObjectWithTag("End").transform;
+    }
 
     void Update()
     {

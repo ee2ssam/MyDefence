@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 375271593}
   - component: {fileID: 375271592}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Tiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PrefabTest
   prefab: {fileID: 4979159275114225666, guid: 0ab8617859e4ad14cb4900d0c6ad24d3, type: 3}
+  tileTimer: 1
 --- !u!4 &375271593
 Transform:
   m_ObjectHideFlags: 0
