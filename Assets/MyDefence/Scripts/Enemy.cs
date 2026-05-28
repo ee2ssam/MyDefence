@@ -10,7 +10,7 @@ namespace MyDefence
         //필드 선언부
         #region Variables
         //이동 목표 위치를 가지고 있는 오브젝트
-        public Transform target;
+        private Transform target;
 
         //Enemy 이동 속도
         public float speed = 10f;
@@ -18,6 +18,12 @@ namespace MyDefence
 
         //유니티 이벤트 함수 구현부
         #region Unity Event Method
+        private void Start()
+        {            
+            //타겟(이동 목적지) 찾아오기
+            target = GameObject.FindGameObjectWithTag("End").transform;
+        }
+
         private void Update()
         {
             //타겟을 향해 이동 (dir(방향), Time.deltaTime, speed)
@@ -41,7 +47,7 @@ namespace MyDefence
         //Enemy가 타겟에 도착시 처리 내용 구현
         void ArriveAtTarget()
         {
-            Debug.Log("타겟에 도착 했다");
+            //Debug.Log("타겟에 도착 했다");
             Destroy(this.gameObject);
         }
         #endregion
