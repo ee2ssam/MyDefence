@@ -47,7 +47,7 @@ namespace MyDefence
                 countdown = 0f;
             }
 
-            Debug.Log($"countdown:{countdown}");
+            //Debug.Log($"countdown:{countdown}");
             //countdownText.text = countdown.ToString();
             //countdownText.text = string.Format("{0:00.00}", countdown); //실수(소수점) 이하 출력
             countdownText.text = Mathf.Round(spawnTimer - countdown).ToString();       //정수(반올림하여) 출력

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33797624752511041}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.578712, z: 0, w: 0.81553197}
+  m_LocalRotation: {x: 0, y: -0.51899695, z: 0, w: 0.8547761}
   m_LocalPosition: {x: 0, y: 0.793, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32,7 +32,7 @@ Transform:
   - {fileID: 4855172638656961188}
   - {fileID: 6285175690522400213}
   m_Father: {fileID: 2351039690228364093}
-  m_LocalEulerAnglesHint: {x: 0, y: -70.72, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -62.53, z: 0}
 --- !u!1 &234859685241845077
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2351039690228364093}
+  - component: {fileID: 4487294523653774153}
   m_Layer: 10
   m_Name: MachineGunTower
   m_TagString: Untagged
@@ -428,6 +429,21 @@ Transform:
   - {fileID: 2326271275420613489}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4487294523653774153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2728347298349796715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737ce2708bf2aa14db970a2bffb1e6fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tower
+  attackRange: 7
+  partToRotate: {fileID: 2326271275420613489}
+  turnSpeed: 10
 --- !u!1 &2999606321121000940
 GameObject:
   m_ObjectHideFlags: 0
