@@ -951,6 +951,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &819485589 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6285175690522400213, guid: d4ebf3cd15aa0014e821a738626b3a05, type: 3}
+  m_PrefabInstance: {fileID: 6885214778055298651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,6 +1943,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MachineGunTower
       objectReference: {fileID: 0}
+    - target: {fileID: 4487294523653774153, guid: d4ebf3cd15aa0014e821a738626b3a05, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 819485589}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

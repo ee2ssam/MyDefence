@@ -444,6 +444,10 @@ MonoBehaviour:
   attackRange: 7
   partToRotate: {fileID: 2326271275420613489}
   turnSpeed: 10
+  searchTimer: 0.2
+  fireTimer: 1
+  bulletPrefab: {fileID: 1146755307826644662, guid: 683131d3ed64c0a47818a3dd063d0e1b, type: 3}
+  firePoint: {fileID: 6285175690522400213}
 --- !u!1 &2999606321121000940
 GameObject:
   m_ObjectHideFlags: 0
