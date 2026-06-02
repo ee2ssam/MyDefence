@@ -7,8 +7,27 @@ namespace MySample
         #region Unity Event Method
         private void Start()
         {
+            //정적 멤버 변수 사용하기(전역적 접근) : 클래스이름.멤버변수이름
+            StaticTest.number = 20;
+            Debug.Log(StaticTest.number.ToString());
+
+            //싱글톤 패턴 클래스 인스턴스를 이용하여 멤버변수 사용하기 : 클래스이름.인스턴스이름.멤버변수이름
+            //싱글톤 패턴 클래스 new를 사용하지 않는다, 클래스 안에서 자동으로 생성 해주었다
+            //SingletonClass singletonClass = new SingletonClass(); X
+            var singletonClassA = SingletonClass.Instance;
+            var singletonClassB = SingletonClass.Instance;
+            if(singletonClassA == singletonClassB)
+            {
+                Debug.Log(singletonClassA.ToString());
+            }
+
             SingletonClass.Instance.number = 10;
             Debug.Log(SingletonClass.Instance.number.ToString());
+
+            //모노 싱글톤 패턴 클래스 인스턴스를 이용하여 멤버변수 사용하기 : 클래스이름.인스턴스이름.멤버변수이름
+            SingletonMono.Instance.number = 30;
+            Debug.Log(SingletonMono.Instance.number.ToString());
+
         }
         #endregion
     }
