@@ -60,7 +60,7 @@ namespace MyDefence
         IEnumerator SpawnWave()
         {
             waveCount++;
-            Debug.Log($"{waveCount}번째 Wave");
+            //Debug.Log($"{waveCount}번째 Wave");
 
             //waveCount 만큼 적 스폰하기
             for (int i = 0; i < waveCount; i++)

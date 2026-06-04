@@ -21,7 +21,7 @@ namespace MySample
 
         private void Update()
         {
-            //키입력 체크 - w키 입력
+            //키보드 입력 체크 - w키 입력
             /*if (Input.GetKey(KeyCode.W))
             {
                 Debug.Log("w키를 누르고 있습니다");
