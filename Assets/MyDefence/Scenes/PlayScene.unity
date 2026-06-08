@@ -905,6 +905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MyDefence.BuildManager
   machineGunPrefab: {fileID: 2728347298349796715, guid: d4ebf3cd15aa0014e821a738626b3a05, type: 3}
+  rocketTowerPrefab: {fileID: 4169087390907989457, guid: 2291b3a8ef9e73d48bbb2a5b864eebf4, type: 3}
 --- !u!4 &540768366
 Transform:
   m_ObjectHideFlags: 0
@@ -1098,7 +1099,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2882759908850945662, guid: 4ea3529b5e495a84d9e0597f6f59d96c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1053834066}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ea3529b5e495a84d9e0597f6f59d96c, type: 3}
 --- !u!1 &771042453
@@ -1205,7 +1209,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 771042457}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1240487567}
+        m_TargetAssemblyTypeName: MyDefence.BuildMenu, Assembly-CSharp
+        m_MethodName: SelectedMachineGun
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &771042457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1347,6 +1363,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &852852085 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2882759908850945662, guid: 4ea3529b5e495a84d9e0597f6f59d96c, type: 3}
+  m_PrefabInstance: {fileID: 619042794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &881214206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1513,7 +1534,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1023886786}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1240487567}
+        m_TargetAssemblyTypeName: MyDefence.BuildMenu, Assembly-CSharp
+        m_MethodName: SelectedRoketTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1023886786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1658,12 +1691,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053834062}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 852852085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1056953323
 GameObject:
@@ -1997,6 +2030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1240487566}
+  - component: {fileID: 1240487567}
   m_Layer: 5
   m_Name: BuildMenu
   m_TagString: Untagged
@@ -2025,6 +2059,18 @@ RectTransform:
   m_AnchoredPosition: {x: -165, y: 70}
   m_SizeDelta: {x: 330, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1240487567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240487565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75a2ea97285d4d846bf270f940fe02c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuildMenu
 --- !u!1001 &1255364185
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2879,6 +2925,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2937676317840366443, guid: 863230bd739e4cd44a37e9ba41a1f729, type: 3}
   m_PrefabInstance: {fileID: 5537212580493131245}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5983345859992588700
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3988305648364915933, guid: 2291b3a8ef9e73d48bbb2a5b864eebf4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988305648364915933, guid: 2291b3a8ef9e73d48bbb2a5b864eebf4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988305648364915933, guid: 2291b3a8ef9e73d48bbb2a5b864eebf4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988305648364915933, guid: 2291b3a8ef9e73d48bbb2a5b864eebf4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988305648364915933, guid: 2291b3a8ef9e73d48bbb2a5b864eebf4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988305648364915933, guid: 2291b3a8ef9e73d48bbb2a5b864eebf4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988305648364915933, guid: 2291b3a8ef9e73d48bbb2a5b864eebf4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988305648364915933, guid: 2291b3a8ef9e73d48bbb2a5b864eebf4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988305648364915933, guid: 2291b3a8ef9e73d48bbb2a5b864eebf4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988305648364915933, guid: 2291b3a8ef9e73d48bbb2a5b864eebf4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4169087390907989457, guid: 2291b3a8ef9e73d48bbb2a5b864eebf4, type: 3}
+      propertyPath: m_Name
+      value: RocketTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 4169087390907989457, guid: 2291b3a8ef9e73d48bbb2a5b864eebf4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6291657068637635594, guid: 2291b3a8ef9e73d48bbb2a5b864eebf4, type: 3}
+      propertyPath: fireTimer
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2291b3a8ef9e73d48bbb2a5b864eebf4, type: 3}
 --- !u!1001 &6411194242516149602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2956,6 +3067,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1818379518809889488, guid: d4ebf3cd15aa0014e821a738626b3a05, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326271275420613489, guid: d4ebf3cd15aa0014e821a738626b3a05, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.89068943
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326271275420613489, guid: d4ebf3cd15aa0014e821a738626b3a05, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.45461228
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326271275420613489, guid: d4ebf3cd15aa0014e821a738626b3a05, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -54.08
+      objectReference: {fileID: 0}
     - target: {fileID: 2351039690228364093, guid: d4ebf3cd15aa0014e821a738626b3a05, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1
@@ -3021,6 +3148,7 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 619042794}
+  - {fileID: 540768366}
   - {fileID: 1132707279}
   - {fileID: 1413397793}
   - {fileID: 1409734485}
@@ -3029,5 +3157,4 @@ SceneRoots:
   - {fileID: 274032131}
   - {fileID: 1234986601}
   - {fileID: 6885214778055298651}
-  - {fileID: 540768366}
-  - {fileID: 1053834066}
+  - {fileID: 5983345859992588700}

@@ -1,10 +1,9 @@
-using Unity.Hierarchy;
 using UnityEngine;
 
 namespace MyDefence
 {
     /// <summary>
-    /// 탄환을 관리하는 클래스
+    /// 탄환을 관리하는 클래스, 모든 발사체에 들어가는 부모 클래스
     /// </summary>
     public class Bullet : MonoBehaviour
     {
@@ -49,7 +48,7 @@ namespace MyDefence
         }
 
         //타겟 충돌
-        void HitTarget()
+        protected virtual void HitTarget()
         {
             //뷸렛이 적을 타격할때 뷸렛이 부서져서 파편이 날아가는 효과
             if(bulletImpactPrefab) //bulletImpactPrefab != null
@@ -57,12 +56,20 @@ namespace MyDefence
                 GameObject effectGo = Instantiate(bulletImpactPrefab, this.transform.position, Quaternion.identity);
                 //킬 예약
                 Destroy(effectGo, 3f);
-            }            
+            }
 
-            //타겟, 탄환 게임오브젝트 kill (Destory)
             //Debug.Log("Hit Target!!!");
-            Destroy(target.gameObject);
+            //타겟에게 데미지 주기
+            Damage(target);
+
+            //탄환 게임오브젝트 kill (Destory)
             Destroy(this.gameObject);
+        }
+
+        //타격 당한 적에게 데미지 주기 - 킬
+        protected void Damage(Transform enemy)
+        {
+            Destroy(enemy.gameObject);
         }
         #endregion
     }

@@ -37,21 +37,28 @@ namespace MyDefence
 
         //타워 프리팹
         public GameObject machineGunPrefab;
+        public GameObject rocketTowerPrefab;
         #endregion
 
         #region Unity Event Method
         private void Start()
         {
             //머신건 프리팹 선택
-            selectedTower = machineGunPrefab;
+            //selectedTower = machineGunPrefab;
         }
         #endregion
 
         #region Custom Method
-        //선택한 타워 프리팹 오브젝트 반환
+        //선택한 타워 프리팹 오브젝트 인스턴스 반환
         public GameObject GetSelectedTower()
         {
             return selectedTower;
+        }
+
+        //선택한 타워를 매개변수로 받아 저장
+        public void SetSelectedTower(GameObject prefab)
+        {
+            selectedTower = prefab;
         }
         #endregion
     }

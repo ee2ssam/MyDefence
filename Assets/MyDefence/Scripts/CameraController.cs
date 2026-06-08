@@ -54,7 +54,7 @@ namespace MyDefence
                 this.transform.Translate(Vector3.right * Time.deltaTime * moveSpeed, Space.World);
             }
 
-            //마우스 위치 가져와서 카메라 이동 처리
+            /*//마우스 위치 가져와서 카메라 이동 처리
             float mousePosX = Input.mousePosition.x;
             float mousePosY = Input.mousePosition.y;
 
@@ -73,7 +73,7 @@ namespace MyDefence
             if (mousePosX >= (Screen.width - border) && mousePosX < Screen.width) 
             {
                 this.transform.Translate(Vector3.right * Time.deltaTime * moveSpeed, Space.World);
-            }
+            }*/
 
             //마우스 휠의 스크롤 값을 가져와서 카메라의 위 아래 이동 처리
             float scroll = Input.GetAxis("Mouse ScrollWheel");
