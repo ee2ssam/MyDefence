@@ -32,33 +32,38 @@ namespace MyDefence
         #endregion
 
         #region Variables
-        //선택한 타워 게임오브젝트 - 타일에 설치할 프리팹 오브젝트
-        private GameObject selectedTower;
-
-        //타워 프리팹
-        public GameObject machineGunPrefab;
-        public GameObject rocketTowerPrefab;
+        //선택한 타워 Blueprint - 타일에 설치할 프리팹 오브젝트, 건설비용, ....
+        private TowerBlueprint selectedTower;
         #endregion
 
-        #region Unity Event Method
-        private void Start()
+        #region Property
+        //타워 건설 가능 여부 체크, 읽기 전용 - true:건설불가능, false:건설 가능
+        public bool CannotBuild
         {
-            //머신건 프리팹 선택
-            //selectedTower = machineGunPrefab;
+            get { return selectedTower == null; }
+        }
+
+        //건설 비용 체크
+        public bool HasBuildCost
+        {
+            get { return GameData.HasGold(selectedTower.cost);  }
         }
         #endregion
 
+        #region Unity Event Method
+        #endregion
+
         #region Custom Method
-        //선택한 타워 프리팹 오브젝트 인스턴스 반환
-        public GameObject GetSelectedTower()
+        //선택한 타워 TowerBlueprint 인스턴스 반환
+        public TowerBlueprint GetSelectedTower()
         {
             return selectedTower;
         }
 
-        //선택한 타워를 매개변수로 받아 저장
-        public void SetSelectedTower(GameObject prefab)
+        //선택한 타워의 TowerBlueprint를 매개변수로 받아 저장
+        public void SetSelectedTower(TowerBlueprint tower)
         {
-            selectedTower = prefab;
+            selectedTower = tower;
         }
         #endregion
     }
