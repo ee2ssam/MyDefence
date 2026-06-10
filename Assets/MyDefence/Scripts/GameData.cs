@@ -35,6 +35,7 @@ namespace MyDefence
         public static void AddGold(int amount)
         {
             gold += amount;
+            Debug.Log($"현재 소지금: {gold}");
         }
 
         //돈 쓰기, 결재 여부를 bool 반환

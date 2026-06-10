@@ -8,11 +8,14 @@ namespace MyDefence
     public class Bullet : MonoBehaviour
     {
         #region Variables
-        private Transform target;    //이동 목표 오브젝트의 트랜스폼 인스턴스
+        protected Transform target;    //이동 목표 오브젝트의 트랜스폼 인스턴스
         public float moveSpeed = 50f;     //탄환 이동 속도
 
         //타격 효과
         public GameObject bulletImpactPrefab;   //임팩트 파티클 게임오브젝트 인스턴스
+
+        [SerializeField]
+        protected float attackDamage = 50f;     //공격력
         #endregion
 
         #region Unity Event Method
@@ -67,9 +70,17 @@ namespace MyDefence
         }
 
         //타격 당한 적에게 데미지 주기 - 킬
-        protected void Damage(Transform enemy)
+        protected virtual void Damage(Transform _target)
         {
-            Destroy(enemy.gameObject);
+            //Destroy(enemy.gameObject);
+
+            //Enemy 인스턴스 가져오기
+            Enemy enemy = _target.GetComponent<Enemy>();
+            if(enemy != null)
+            {
+                enemy.TakeDamage(attackDamage);
+            }
+
         }
         #endregion
     }

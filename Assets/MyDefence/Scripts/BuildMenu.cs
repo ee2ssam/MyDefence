@@ -14,6 +14,7 @@ namespace MyDefence
         //타워 선택 목록
         public TowerBlueprint machineGun;           //머신건프리팹, 머신건 건설비용
         public TowerBlueprint rocketTower;          //로켓타워프리팹, 로켓타워 건설비용
+        public TowerBlueprint laserTower;          //레이저타워프리팹, 레이저타워 건설비용
         #endregion
 
         #region Unity Event Method
@@ -37,6 +38,13 @@ namespace MyDefence
         {
             Debug.Log("로켓 타워를 선택 했습니다");
             buildManager.SetSelectedTower(rocketTower);
+        }
+
+        //레이저타워 버튼 클릭시 호출
+        public void SelectedLaserTower()
+        {
+            Debug.Log("레이저 타워를 선택 했습니다");
+            buildManager.SetSelectedTower(laserTower);
         }
         #endregion
     }

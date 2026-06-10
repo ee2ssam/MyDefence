@@ -14,6 +14,18 @@ namespace MyDefence
 
         //Enemy 이동 속도
         public float speed = 10f;
+
+        //체력
+        private float health;               //현재 체력
+        [SerializeField]
+        private float startHealth = 100f;   //체력 초기값
+
+        //죽음 이펙트
+        public GameObject deathEffectPrefab;
+
+        //보상
+        [SerializeField]
+        private int rewardGold = 50;        //보상 골드
         #endregion
 
         //유니티 이벤트 함수 구현부
@@ -22,6 +34,9 @@ namespace MyDefence
         {            
             //타겟(이동 목적지) 찾아오기
             target = GameObject.FindGameObjectWithTag("End").transform;
+
+            //초기화
+            health = startHealth;
         }
 
         private void Update()
@@ -48,6 +63,35 @@ namespace MyDefence
         void ArriveAtTarget()
         {
             //Debug.Log("타겟에 도착 했다");
+            Destroy(this.gameObject);
+        }
+
+        //데미지 입기 처리
+        public void TakeDamage(float damage)
+        {
+            health -= damage;
+
+            //죽음 체크
+            if(health <= 0f)
+            {
+                Death();
+            }
+        }
+
+        //죽음 처리
+        private void Death()
+        {
+            //이펙트 효과(vfx, sfx)
+            if(deathEffectPrefab != null)
+            {
+                GameObject effectGo = Instantiate(deathEffectPrefab, this.transform.position, Quaternion.identity);
+                Destroy(effectGo, 3f);
+            }
+
+            //보상 처리(골드, 경험치, 아이템...)
+            GameData.AddGold(rewardGold);
+
+            //kill
             Destroy(this.gameObject);
         }
         #endregion

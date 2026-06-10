@@ -3,13 +3,13 @@ using UnityEngine;
 namespace MyDefence
 {
     /// <summary>
-    /// 타워를 관리하는 클래스
+    /// 타워를 관리하는 클래스, 타워들의 공통기능을 가진 부모 클래스
     /// </summary>
     public class Tower : MonoBehaviour
     {
         #region Variables
         //타워 공격
-        private GameObject target;      //공격 범위안에 있는 가장 가까운 적
+        protected GameObject target;      //공격 범위안에 있는 가장 가까운 적
         public float attackRange = 7f;  //타워 공격 범위
 
         //타워 회전
@@ -18,11 +18,11 @@ namespace MyDefence
 
         //SearchTimer 0.2초
         public float searchTimer = 0.2f;
-        private float countdown = 0f;
+        protected float countdown = 0f;
 
         //발사 타이머 1초에 한발씩
         public float fireTimer = 1.0f;
-        private float fireCountdown = 0f;
+        protected float fireCountdown = 0f;
 
         //탄환 발사
         public GameObject bulletPrefab;     //탄환 프리팹 게임 오브젝트 인스턴스
@@ -30,7 +30,7 @@ namespace MyDefence
         #endregion
 
         #region Unity Event Method
-        private void Update()
+        protected virtual void Update()
         {
             //0.2초마다 한번씩 공격 범위안에 있는 가장 가까운 적 찾기 
             countdown += Time.deltaTime;
@@ -81,7 +81,7 @@ namespace MyDefence
 
         #region Custom Method
         //3. 터렛에서 가장 가까운 적 찾아(Tag "Enemy")  타겟으로 설정
-        void UpdateTarget()
+        protected void UpdateTarget()
         {
             GameObject[] enemies;
             enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -112,7 +112,7 @@ namespace MyDefence
         }
 
         //타겟(가장 가까운 Enemy)의 움직임에 따라 터렛 헤드가 타겟 방향으로 회전한다
-        void LockOn()
+        protected void LockOn()
         {
             Vector3 dir = target.transform.position - partToRotate.position;
             //목표 방향에 해당되는 회전값 구하기
@@ -121,7 +121,7 @@ namespace MyDefence
         }
 
         //탄환 발사
-        void Shoot()
+        protected void Shoot()
         {
             //Debug.Log("Shooot!!!");
             //총구 위치와 회전값에 탄환 프리팹 사본 생성(Instantiate)
