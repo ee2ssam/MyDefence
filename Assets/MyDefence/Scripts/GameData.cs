@@ -11,6 +11,9 @@ namespace MyDefence
         #region Variables
         private static int gold;       //소지금
         public int startGold = 400;    //초기 소지금
+
+        private static int lives;                       //생명 갯수
+        [SerializeField] private int startLives = 10;   //초기 생명 갯수
         #endregion
 
         #region Property
@@ -19,6 +22,9 @@ namespace MyDefence
         {
             get {  return gold; }
         }
+
+        //라이프 읽기 전용 속성
+        public static int Lives => lives;
         #endregion
 
         #region Unity Event Method
@@ -26,7 +32,8 @@ namespace MyDefence
         {
             //초기화
             gold = startGold;       //초기 소지금을 지급
-            Debug.Log($"초기 소지금 {startGold}Gold를 지급하였습니다");
+            lives = startLives;     //초기 생명 갯수
+            //Debug.Log($"초기 소지금 {startGold}Gold를 지급하였습니다");
         }
         #endregion
 
@@ -35,7 +42,7 @@ namespace MyDefence
         public static void AddGold(int amount)
         {
             gold += amount;
-            Debug.Log($"현재 소지금: {gold}");
+            //Debug.Log($"현재 소지금: {gold}");
         }
 
         //돈 쓰기, 결재 여부를 bool 반환
@@ -56,6 +63,25 @@ namespace MyDefence
         public static bool HasGold(int amount)
         {
             return gold >= amount;
+        }
+
+        //생명 추가하기
+        //ToDo : Max Lives 체크
+        public static void AddLife(int amount)
+        {
+            lives += amount;
+        }
+
+        //생명 사용하기
+        public static void UseLife(int amount = 1)
+        {
+            lives -= amount;
+            //Debug.Log($"현재 라이프: {lives}");
+
+            if (lives <= 0)
+            {
+                lives = 0;
+            }
         }
         #endregion
 

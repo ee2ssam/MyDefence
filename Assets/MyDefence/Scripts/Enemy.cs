@@ -13,7 +13,9 @@ namespace MyDefence
         private Transform target;
 
         //Enemy 이동 속도
-        public float speed = 10f;
+        private float speed;            //현재 이동 속도
+        [SerializeField]
+        private float startSpeed = 5f;  //이동속도 초기값
 
         //체력
         private float health;               //현재 체력
@@ -37,6 +39,7 @@ namespace MyDefence
 
             //초기화
             health = startHealth;
+            speed = startSpeed;
         }
 
         private void Update()
@@ -54,15 +57,20 @@ namespace MyDefence
                 ArriveAtTarget();
             }
 
+            //속도 초기화
+            speed = startSpeed;
         }
         #endregion
 
         //유저 구현 함수
         #region Custom Method
-        //Enemy가 타겟에 도착시 처리 내용 구현
+        //Enemy가 종점에 도착시 처리 내용 구현
         void ArriveAtTarget()
         {
-            //Debug.Log("타겟에 도착 했다");
+            //종점 도착 처리 
+            GameData.UseLife();
+
+            //Debug.Log("종점에 도착 했다");
             Destroy(this.gameObject);
         }
 
@@ -70,6 +78,7 @@ namespace MyDefence
         public void TakeDamage(float damage)
         {
             health -= damage;
+            //Debug.Log($"health: {health}");
 
             //죽음 체크
             if(health <= 0f)
@@ -93,6 +102,13 @@ namespace MyDefence
 
             //kill
             Destroy(this.gameObject);
+        }
+
+        //이동속도 느리게
+        public void Slow(float rate) //40%
+        {
+            speed = startSpeed * (1 - rate); // 5 -> 3 -> 3
+            //Debug.Log($"speed: {speed}");
         }
         #endregion
     }

@@ -8,19 +8,50 @@ namespace MyDefence
     public class GameManager : MonoBehaviour
     {
         #region Variables
+        //게임오버 체크
+        private bool isGameOver = false;
+
         //치트 체크 변수
         [SerializeField]
         private bool isCheating = false;
         #endregion
 
         #region Unity Event Method
+        private void Start()
+        {
+            //초기화
+            isGameOver = false;
+        }
+
         private void Update()
         {
+            //게임오버시 더이상 진행하지 않도록 막는다
+            if (isGameOver)
+                return;
+
+            //게임 오버 체크
+            if(GameData.Lives <= 0)
+            {
+                GameOver();
+            }
+
             //치트키
             if(Input.GetKeyDown(KeyCode.M))
             {
                 ShowMeTheMoney();
             }
+        }
+        #endregion
+
+        #region Custom Method
+        //게임오버 처리
+        void GameOver()
+        {
+            Debug.Log("Game Over!!!!");
+            isGameOver = true;
+
+            //벌
+            //게임오버 UI 보여주기
         }
         #endregion
 

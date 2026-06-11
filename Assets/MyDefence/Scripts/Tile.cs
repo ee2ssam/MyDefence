@@ -124,8 +124,7 @@ namespace MyDefence
 
             //초기화
             buildManager.SetSelectedTower(null);
-            Debug.Log($"건설하고 남은 소지금: {GameData.Gold}");
-
+            //Debug.Log($"건설하고 남은 소지금: {GameData.Gold}");
         }
         #endregion
 
