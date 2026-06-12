@@ -11,6 +11,9 @@ namespace MyDefence
         //게임오버 체크
         private bool isGameOver = false;
 
+        //게임오버 UI 게임오브젝트 인스턴스
+        public GameObject gameOverUI;
+
         //치트 체크 변수
         [SerializeField]
         private bool isCheating = false;
@@ -40,6 +43,10 @@ namespace MyDefence
             {
                 ShowMeTheMoney();
             }
+            if (Input.GetKeyDown(KeyCode.O) && isCheating)
+            {
+                GameOver();
+            }
         }
         #endregion
 
@@ -51,7 +58,8 @@ namespace MyDefence
             isGameOver = true;
 
             //벌
-            //게임오버 UI 보여주기
+            //게임오버 UI 보여주기(활성화)
+            gameOverUI.SetActive(true);
         }
         #endregion
 

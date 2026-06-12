@@ -14,6 +14,8 @@ namespace MyDefence
 
         private static int lives;                       //생명 갯수
         [SerializeField] private int startLives = 10;   //초기 생명 갯수
+
+        private static int waves;       //Wave 카운트
         #endregion
 
         #region Property
@@ -25,6 +27,13 @@ namespace MyDefence
 
         //라이프 읽기 전용 속성
         public static int Lives => lives;
+
+        //웨이브 카운트
+        public static int Waves
+        {
+            get { return waves; }
+            set { waves = value; }
+        }
         #endregion
 
         #region Unity Event Method
@@ -33,6 +42,7 @@ namespace MyDefence
             //초기화
             gold = startGold;       //초기 소지금을 지급
             lives = startLives;     //초기 생명 갯수
+            waves = 0;              //웨이브 카운트
             //Debug.Log($"초기 소지금 {startGold}Gold를 지급하였습니다");
         }
         #endregion

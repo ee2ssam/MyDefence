@@ -59,6 +59,7 @@ namespace MyDefence
         //적 웨이브 구현 - 코루틴 함수로 구현
         IEnumerator SpawnWave()
         {
+            GameData.Waves++;
             waveCount++;
             //Debug.Log($"{waveCount}번째 Wave");
 
