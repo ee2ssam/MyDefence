@@ -125,5 +125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914f75e4b83fca04b9d7fe1d9a51b482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MyDefence.Tile
+  blueprint:
+    prefab: {fileID: 0}
+    cost: 0
+    upgradePrefab: {fileID: 0}
+    upgradeCost: 0
   hoverColor: {r: 0.5259472, g: 1, b: 0.1415093, a: 1}
   hoverMaterial: {fileID: 2100000, guid: 1c35a30169b132b4e96c711b75ef2b14, type: 2}
+  buildEffectPrefab: {fileID: 979074635559844388, guid: 0ae368c62d0881149b9bee39ef2c2757, type: 3}
+  sellEffectPrefab: {fileID: 979074635559844388, guid: 2d5c0c0ce0a3ab04c9c343a96e15b47c, type: 3}

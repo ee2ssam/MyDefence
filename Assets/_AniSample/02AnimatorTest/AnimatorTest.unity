@@ -6667,6 +6667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fae53a1ed7d0454ca87f0bf61b02e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MySample.AnimatorTest
+  aniTimer: 1
+  countdown: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

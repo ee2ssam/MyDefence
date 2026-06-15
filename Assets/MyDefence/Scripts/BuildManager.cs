@@ -34,6 +34,11 @@ namespace MyDefence
         #region Variables
         //선택한 타워 Blueprint - 타일에 설치할 프리팹 오브젝트, 건설비용, ....
         private TowerBlueprint selectedTower;
+
+        //TileUI 인스턴스
+        public TileUI tileUI;
+        //선택한 타일의 인스턴스
+        private Tile selectedTile;
         #endregion
 
         #region Property
@@ -64,6 +69,33 @@ namespace MyDefence
         public void SetSelectedTower(TowerBlueprint tower)
         {
             selectedTower = tower;
+        }
+
+        //타일을 선택 - 선택한 타일의 인스턴스를 매개변수로 전달
+        public void SelectTile(Tile tile)
+        {
+            //이미 선택되어 있다 && 이미 선택한 타일과 지금 선택한 타일이 같다면
+            if(selectedTile == tile)
+            {
+                DeSelectTile();
+                return;
+            }
+
+            //설치될 타워 정보 초기화
+            selectedTower = null;
+
+            selectedTile = tile;
+            tileUI.ShowTileUI(tile);
+        }
+
+        //타일 선택 해제
+        public void DeSelectTile()
+        {
+            //설치될 타워 정보 초기화
+            selectedTower = null;
+
+            selectedTile = null;
+            tileUI.HideTileUI();
         }
         #endregion
     }
