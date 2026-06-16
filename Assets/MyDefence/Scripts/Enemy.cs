@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace MyDefence
 {
@@ -28,6 +29,9 @@ namespace MyDefence
         //보상
         [SerializeField]
         private int rewardGold = 50;        //보상 골드
+
+        //HP Bar 이미지
+        public Image healthBarImage;
         #endregion
 
         //유니티 이벤트 함수 구현부
@@ -49,6 +53,9 @@ namespace MyDefence
             Vector3 dir = target.position - this.transform.position;
             this.transform.Translate(dir.normalized * Time.deltaTime * speed, Space.World);
 
+            //타겟을 바라본다
+            this.transform.LookAt(target);
+
             //도착 판정
             //타겟과 enemy와의 거리를 구해서 일정거리(0.2f) 안에 들어오면 도착이라고 판정한다
             float distance = Vector3.Distance(target.position, this.transform.position);
@@ -56,6 +63,9 @@ namespace MyDefence
             {
                 ArriveAtTarget();
             }
+
+            //Health Bar 이미지 UI
+            healthBarImage.fillAmount = health / startHealth;
 
             //속도 초기화
             speed = startSpeed;
