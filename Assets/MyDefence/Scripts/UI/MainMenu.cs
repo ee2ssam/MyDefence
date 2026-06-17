@@ -9,9 +9,20 @@ namespace MyDefence
     public class MainMenu : MonoBehaviour
     {
         #region Variables
+        //씬페이더 인스턴스
+        public SceneFader fader;
+
         //다음 씬 이름
         [SerializeField]
         private string loadToScene = "PlayScene";
+        #endregion
+
+        #region Unity Event Method
+        private void Start()
+        {
+            //페이더 시작
+            fader.FadeStart(1f);
+        }
         #endregion
 
         #region Custom Method
@@ -19,7 +30,7 @@ namespace MyDefence
         public void Play()
         {
             //Debug.Log($"goto {loadToScene}");
-            SceneManager.LoadScene(loadToScene);
+            fader.FadeTo(loadToScene);
         }
 
         //게임 종료 버튼 클릭시 호출

@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 8144445446233446408}
   - component: {fileID: 6139705581555543162}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy_Fast
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,10 +159,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ba24e09cf1c18248b465beb0af5e9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  startSpeed: 5
-  startHealth: 100
-  deathEffectPrefab: {fileID: 4611773428630189573, guid: e07e7ee3ab2bedc41b3c011a0bf1d64d, type: 3}
-  rewardGold: 50
+  startSpeed: 10
+  startHealth: 25
+  deathEffectPrefab: {fileID: 4611773428630189573, guid: 2e608466db805f44ab354202b808b67f, type: 3}
+  rewardGold: 25
   healthBarImage: {fileID: 9141092763674894746}
 --- !u!135 &6139705581555543162
 SphereCollider:
@@ -473,7 +473,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68fdbb12bdd3fae43b4ac9751178e385, type: 2}
+  - {fileID: 2100000, guid: 40f1d36f92e39b4409f17e4bc49b92ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

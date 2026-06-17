@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 namespace MyDefence
 {
@@ -23,6 +24,9 @@ namespace MyDefence
         [SerializeField]
         private float startHealth = 100f;   //체력 초기값
 
+        //죽음 체크
+        private bool isDeath = false;
+
         //죽음 이펙트
         public GameObject deathEffectPrefab;
 
@@ -37,9 +41,10 @@ namespace MyDefence
         //유니티 이벤트 함수 구현부
         #region Unity Event Method
         private void Start()
-        {            
+        {
             //타겟(이동 목적지) 찾아오기
-            target = GameObject.FindGameObjectWithTag("End").transform;
+            //target = GameObject.FindGameObjectWithTag("End").transform; //points[0]
+            target = WayPoints.points[0];
 
             //초기화
             health = startHealth;
@@ -80,6 +85,9 @@ namespace MyDefence
             //종점 도착 처리 
             GameData.UseLife();
 
+            //데이터 처리
+            SpawnManager.enemyAlive--;
+
             //Debug.Log("종점에 도착 했다");
             Destroy(this.gameObject);
         }
@@ -91,7 +99,7 @@ namespace MyDefence
             //Debug.Log($"health: {health}");
 
             //죽음 체크
-            if(health <= 0f)
+            if(health <= 0f && isDeath == false)
             {
                 Death();
             }
@@ -99,13 +107,18 @@ namespace MyDefence
 
         //죽음 처리
         private void Death()
-        {
+        {            
+            isDeath = true;
+
             //이펙트 효과(vfx, sfx)
             if(deathEffectPrefab != null)
             {
                 GameObject effectGo = Instantiate(deathEffectPrefab, this.transform.position, Quaternion.identity);
                 Destroy(effectGo, 3f);
             }
+
+            //데이터 처리
+            SpawnManager.enemyAlive--;
 
             //보상 처리(골드, 경험치, 아이템...)
             GameData.AddGold(rewardGold);

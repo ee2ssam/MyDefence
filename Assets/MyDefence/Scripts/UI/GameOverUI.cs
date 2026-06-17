@@ -10,6 +10,13 @@ namespace MyDefence
     public class GameOverUI : MonoBehaviour
     {
         #region Variables
+        //씬페이더 인스턴스
+        public SceneFader fader;
+
+        //다음 씬 이름
+        [SerializeField]
+        private string loadToScene = "MainMenu";
+
         //웨이브 카운트 텍스트 UI
         public TextMeshProUGUI wavesText;
         #endregion
@@ -27,7 +34,7 @@ namespace MyDefence
         //메인메뉴 버튼 클릭시 호출
         public void MainMenu()
         {
-            Debug.Log("Goto MainMenu!!!");
+            fader.FadeTo(loadToScene);
         }
 
         //리스타트 버튼 클릭시 호출
@@ -35,7 +42,7 @@ namespace MyDefence
         {
             //Debug.Log("ReStart!!!");
             //현재 플레이하고 있는 씬을 다시 로드한다
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);            
+            fader.FadeTo(SceneManager.GetActiveScene().buildIndex);
         }
         #endregion
     }
