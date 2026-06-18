@@ -576,7 +576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MyDefence.MainMenu
   fader: {fileID: 1139587161}
-  loadToScene: PlayScene
+  loadToScene: LevelSelect
 --- !u!4 &805032213
 Transform:
   m_ObjectHideFlags: 0

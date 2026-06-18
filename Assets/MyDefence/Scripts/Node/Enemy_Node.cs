@@ -1,0 +1,162 @@
+using UnityEditor.Experimental.GraphView;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace MyDefence
+{
+    /// <summary>
+    /// Enemy(적)을 관리하는 클래스
+    /// </summary>
+    public class Enemy_Node : MonoBehaviour
+    {
+        //필드 선언부
+        #region Variables
+        //이동 목표 위치를 가지고 있는 오브젝트
+        private Transform target;
+
+        //다음 노드
+        private Node next;          
+
+        //Enemy 이동 속도
+        private float speed;            //현재 이동 속도
+        [SerializeField]
+        private float startSpeed = 5f;  //이동속도 초기값
+
+        //체력
+        private float health;               //현재 체력
+        [SerializeField]
+        private float startHealth = 100f;   //체력 초기값
+
+        //죽음 체크
+        private bool isDeath = false;
+
+        //죽음 이펙트
+        public GameObject deathEffectPrefab;
+
+        //보상
+        [SerializeField]
+        private int rewardGold = 50;        //보상 골드
+
+        //HP Bar 이미지
+        public Image healthBarImage;
+        #endregion
+
+        //유니티 이벤트 함수 구현부
+        #region Unity Event Method
+        private void Start()
+        {
+            //타겟(이동 목적지) 찾아오기
+            //target = GameObject.FindGameObjectWithTag("End").transform; //points[0]
+            //waypointIndex = 0;
+            //target = WayPoints.points[waypointIndex];
+
+            //초기화
+            health = startHealth;
+            speed = startSpeed;
+        }
+
+        private void Update()
+        {
+            //타겟을 향해 이동 (dir(방향), Time.deltaTime, speed)
+            //이동 방향 구하기 : 목표지점 - 현재지점, 도착 예정위치 - 출발(현재) 위치
+            Vector3 dir = target.position - this.transform.position;
+            this.transform.Translate(dir.normalized * Time.deltaTime * speed, Space.World);
+
+            //타겟을 바라본다
+            this.transform.LookAt(target);
+
+            //도착 판정
+            //타겟과 enemy와의 거리를 구해서 일정거리(0.2f) 안에 들어오면 도착이라고 판정한다
+            float distance = Vector3.Distance(target.position, this.transform.position);
+            if(distance <= 0.2f)
+            {
+                ArriveAtTarget();
+            }
+
+            //Health Bar 이미지 UI
+            healthBarImage.fillAmount = health / startHealth;
+
+            //속도 초기화
+            speed = startSpeed;
+        }
+        #endregion
+
+        //유저 구현 함수
+        #region Custom Method
+        //Enemy가 종점에 도착시 처리 내용 구현
+        public void SetNextNode(Node node)
+        {
+            next = node;
+            target = next.transform;
+        }
+
+        void ArriveAtTarget()
+        {
+            //엔드포인트 체크
+            if (next.GetNextNode() == null)
+            {
+                //종점 도착 처리
+                ArriveAtEndPoint();
+                return;
+            }
+
+            next = next.GetNextNode();
+            target = next.transform;
+        }
+
+        //Enemy가 종점에 도착시 처리 내용 구현
+        void ArriveAtEndPoint()
+        {
+            GameData.UseLife();
+
+            //데이터 처리
+            SpawnManager.enemyAlive--;
+
+            //Debug.Log("종점에 도착 했다");
+            Destroy(this.gameObject);
+        }
+
+        //데미지 입기 처리
+        public void TakeDamage(float damage)
+        {
+            health -= damage;
+            //Debug.Log($"health: {health}");
+
+            //죽음 체크
+            if(health <= 0f && isDeath == false)
+            {
+                Death();
+            }
+        }
+
+        //죽음 처리
+        private void Death()
+        {            
+            isDeath = true;
+
+            //이펙트 효과(vfx, sfx)
+            if(deathEffectPrefab != null)
+            {
+                GameObject effectGo = Instantiate(deathEffectPrefab, this.transform.position, Quaternion.identity);
+                Destroy(effectGo, 3f);
+            }
+
+            //데이터 처리
+            SpawnManager.enemyAlive--;
+
+            //보상 처리(골드, 경험치, 아이템...)
+            GameData.AddGold(rewardGold);
+
+            //kill
+            Destroy(this.gameObject);
+        }
+
+        //이동속도 느리게
+        public void Slow(float rate) //40%
+        {
+            speed = startSpeed * (1 - rate); // 5 -> 3 -> 3
+            //Debug.Log($"speed: {speed}");
+        }
+        #endregion
+    }
+}

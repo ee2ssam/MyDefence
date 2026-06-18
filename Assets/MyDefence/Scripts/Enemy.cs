@@ -14,6 +14,9 @@ namespace MyDefence
         //이동 목표 위치를 가지고 있는 오브젝트
         private Transform target;
 
+        //적이 이동할 웨이포인트 인덱스
+        private int waypointIndex = 0;
+
         //Enemy 이동 속도
         private float speed;            //현재 이동 속도
         [SerializeField]
@@ -44,7 +47,8 @@ namespace MyDefence
         {
             //타겟(이동 목적지) 찾아오기
             //target = GameObject.FindGameObjectWithTag("End").transform; //points[0]
-            target = WayPoints.points[0];
+            waypointIndex = 0;
+            target = WayPoints.points[waypointIndex];
 
             //초기화
             health = startHealth;
@@ -82,7 +86,22 @@ namespace MyDefence
         //Enemy가 종점에 도착시 처리 내용 구현
         void ArriveAtTarget()
         {
-            //종점 도착 처리 
+            //엔드포인트 체크
+            if (waypointIndex >= WayPoints.points.Length - 1)
+            {
+                //종점 도착 처리
+                ArriveAtEndPoint();
+                return;
+            }
+
+            waypointIndex++;
+            target = WayPoints.points[waypointIndex];
+            Debug.Log($"다음 타겟은 {waypointIndex} 웨이포인트");
+        }
+
+        //Enemy가 종점에 도착시 처리 내용 구현
+        void ArriveAtEndPoint()
+        {
             GameData.UseLife();
 
             //데이터 처리

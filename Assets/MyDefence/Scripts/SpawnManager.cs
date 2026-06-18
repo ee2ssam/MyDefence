@@ -113,7 +113,18 @@ namespace MyDefence
         //적 스폰하기
         void EnemySpawn(GameObject prefab)
         {
-            Instantiate(prefab, start.position, Quaternion.identity);
+            GameObject enemyGo = Instantiate(prefab, start.position, Quaternion.identity);
+
+            Enemy_Node enemy_Node = enemyGo.GetComponent<Enemy_Node>();
+            if(enemy_Node != null)
+            {
+                //다음 노드 셋팅
+                Node node = start.GetComponent<Node>();
+                if (node != null)
+                {
+                    enemy_Node.SetNextNode(node.GetNextNode());
+                }
+            }
         }
 
         // 웨이브 대기하기

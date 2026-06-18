@@ -21,7 +21,7 @@ namespace MyDefence
         private void Start()
         {
             //페이더 시작
-            fader.FadeStart(1f);
+            fader.FadeStart();
         }
         #endregion
 
