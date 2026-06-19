@@ -1,6 +1,7 @@
-using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace MyDefence
 {
@@ -138,7 +139,7 @@ namespace MyDefence
             if (waveCount >= waves.Length)
             {
                 // 레벨 클리어 로직
-                Debug.Log("레벨 클리어");
+                GameManager.isClearLevel = true;
 
                 //스폰 기능 정지
                 this.enabled = false;

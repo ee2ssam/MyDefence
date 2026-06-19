@@ -22,6 +22,10 @@ namespace MyDefence
         #region Unity Event Method
         private void Start()
         {
+            //레벨 셀렉트씬을 시작할때 - 게임데이터 로드
+            int clearLevel = PlayerPrefs.GetInt("ClearLevel", 0);
+            Debug.Log($"Load Clear Level: {clearLevel}");
+
             //레벨 버튼 배열 초기화
             levelButtons = new Button[content.childCount];
             for (int i = 0; i < levelButtons.Length; i++)
@@ -29,7 +33,7 @@ namespace MyDefence
                 Transform child = content.GetChild(i);
                 levelButtons[i] = child.GetComponent<Button>();
 
-                if(i > 0)
+                if(i > clearLevel)
                     levelButtons[i].interactable = false;
             }
 

@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 namespace MyDefence
 {
@@ -81,6 +80,15 @@ namespace MyDefence
                 enemy.TakeDamage(frameDamage);  //데미지 주기
                 enemy.Slow(slowRate);           //속도 감속
             }
+
+            //Enemy 인스턴스 가져오기
+            Enemy_Node enemyN = target.GetComponent<Enemy_Node>();
+            if (enemyN != null)
+            {
+                enemyN.TakeDamage(frameDamage);  //데미지 주기
+                enemyN.Slow(slowRate);           //속도 감속
+            }
+
 
             //라인 렌더러 그리기 / 이펙트 - 시작시점, 엔드지점 설정
             if (lineRenderer.enabled == false)

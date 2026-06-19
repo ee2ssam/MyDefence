@@ -40,6 +40,9 @@ namespace MyDefence
             }
 
             transform.Translate(dir.normalized * Time.deltaTime * moveSpeed, Space.World);
+
+            //타겟을 바라본다
+            transform.LookAt(target.position);
         }
         #endregion
 
@@ -79,6 +82,12 @@ namespace MyDefence
             if(enemy != null)
             {
                 enemy.TakeDamage(attackDamage);
+            }
+
+            Enemy_Node enemyN = _target.GetComponent<Enemy_Node>();
+            if (enemyN != null)
+            {
+                enemyN.TakeDamage(attackDamage);
             }
 
         }

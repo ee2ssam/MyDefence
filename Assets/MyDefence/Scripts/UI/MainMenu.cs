@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace MyDefence
 {
@@ -36,6 +35,9 @@ namespace MyDefence
         //게임 종료 버튼 클릭시 호출
         public void Quit()
         {
+            //To Do : 치트키
+            //PlayerPrefs.DeleteAll();
+
             Debug.Log("Game Quit");
             //어플 종료 명령 (에디터에서는 명령 무시, 실행파일에서는 명령 시행)
             Application.Quit();
